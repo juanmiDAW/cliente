@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        contraseña="megustaProgramar";
+
+        intro=prompt("Introduzca su contraseña.");
+        
+        if(intro===contraseña){ //Si la contraseña introducida es estrictamente igual a la contraseña registrada saca mensage de bienvenido....
+            document.write('<h1 style="font-size: 80px;"> Bienvenido</h1>');
+        }else {
+            location.reload();// Si no, refresca la ventana del navegador.
+
+        }
+    </script>
+    
+</body>
+</html>

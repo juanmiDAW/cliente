@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        num1 =parseFloat(prompt("Introduzca numero 1:")); //Convierte de cadena a decimal.
+        num2 =parseFloat(prompt("Introduzca numero 2:"));
+        opcion = parseInt(prompt("Calculadora.\nPulse 1 para sumar.\n Pulse 2 para restar\n Pulse 3 para multiplicar. \n Pulse 4 para dividir.\nPulse 5 para obtener el modulo.\n Pulse 6 para salir."));
+
+        resultado = 0;
+        switch (opcion) { //si coincide con la opcion introducida realiza la accion de bloque.
+            case 1:
+                resultado = num1 + num2;
+                document.write("<h1>El resultado de "+num1+"+"+num2+"="+resultado+"</h1>");
+                break;
+            case 2:
+                resultado = num1 - num2;
+                document.write("<h1>El resultado de "+num1+"-"+num2+"="+resultado+"</h1>");
+                break;
+            case 3:
+                resultado = num1 * num2;
+                document.write("<h1>El resultado de "+num1+"*"+num2+"="+resultado+"</h1>");
+                break;
+            case 4:
+                resultado = num1 / num2;
+                document.write("<h1>El resultado de "+num1+"/"+num2+"="+resultado+"</h1>");
+                break;
+            case 5:
+                resultado = num1 % num2;
+                document.write("<h1>El resultado de "+num1+"%"+num2+"="+resultado+"</h1>");
+                break;
+                case 6:
+                    if(confirm("¿Deseas salir?")){
+                        window.close(); //Funcion para cerrar venta del navegador.
+                    }else {
+                        location.reload(); //Metodo que refresca la ventana.
+                    }
+                    break;
+                    
+        }
+    </script>
+</body>
+
+</html>

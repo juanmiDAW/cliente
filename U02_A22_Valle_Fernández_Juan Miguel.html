@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Habitacion:
+            <select name="habitacion" id="habitacion" onchange="resolver()">
+                <option value="salon_de_baile">Salon de baile</option>
+                <option value="la_galeria">La galeria</option>
+                <option value="la_sala_de_billar">La sala de bailar</option>
+                <option value="el_comedor">El comedor</option>
+            </select>
+        </label>
+
+        <label for="">Sospechoso:
+            <select name="sospechoso" id="sospechoso" onchange="resolver()">    // onchange, se usa para llamar a la funcion cada vez que el
+                <option value="sr_parker">Sr. parker</option>                   //usuario cambie de opcion.
+                <option value="sr_van_cleve">Sr. Van Cleve</option>
+                <option value="sra_sparr">Sra. Sparr</option>
+                <option value="sr_kalehoff">Sr. Kalehoff</option>
+            </select>
+        </label>
+        <br>
+        <p id="resolucion"></p>
+
+    </form>
+
+
+    <script>
+
+        function resolver() {
+            habitacion = "";
+            sospechoso = "";
+            resultado = "";
+
+            habitacion = document.getElementById("habitacion").value;
+            sospechoso = document.getElementById("sospechoso").value; //Creacion de variables y se le añade el valor elegido.
+
+
+            switch (habitacion) {
+                case "salon_de_baile":
+                    if (sospechoso == "sr_kalehoff") {
+                        resultado = "Sí, fue Sr. Kalehoff lo hizo en el salón de baile con el veneno.";
+                    } else {
+                        resultado = "No, fue Sr. Kalehoff quien lo hizo en el salón de baile con el veneno.";
+                    }
+                    break;
+
+                case "la_galeria":
+                    if (sospechoso == "sr_van_cleve") {
+                        resultado = "Sí, fue Sr. Van Cleve lo hizo en la galería con el trofeo.";
+                    } else {
+                        resultado = "No, fue Sr. Van Cleve quien lo hizo en la galería con el trofeo.";
+                    }
+                    break;
+
+                case "la_sala_de_billar":
+                    if (sospechoso == "sra_sparr") {
+                        resultado = "Sí, fue Sra. Sparr lo hizo en la sala de billar con el palo de billar.";
+                    } else {
+                        resultado = "No, fue Sra. Sparr quien lo hizo en la sala de billar con el palo de billar.";
+                    }
+                    break;
+
+                case "el_comedor":
+                    if (sospechoso == "sr_parker") {
+                        resultado = "Sí, fue Sr. Parker lo hizo en el comedor con el cuchillo.";
+                    } else {
+                        resultado = "No, fue Sr. Parker quien lo hizo en el comedor con el cuchillo.";
+                    }
+                    break;
+
+
+            }
+
+            document.getElementById("resolucion").innerHTML = "<h1>" + resultado + "</h1>";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        palindromo = prompt("Introduzca palindromo");
+        palindromo_sin = "";
+        reves="";
+        cambio="";
+
+        eliminar_espacios(palindromo);
+        dar_la_vuelta(palindromo_sin);
+        verificacion(palindromo_sin,reves);
+
+
+        function eliminar_espacios(palindromo) {
+            for (i = 0; i < palindromo.length; i++) {
+                if (palindromo[i] == ' ') {
+                    palindromo_sin += palindromo[i].replace(" ", "");  //Reemplaza espacio por cadena vacia.
+                } else {
+                    palindromo_sin += palindromo[i];
+                }
+            }
+        }
+        
+
+        function dar_la_vuelta(palindromo_sin){
+            for(i=palindromo_sin.length-1;i>=0;i--){
+                cambio=palindromo_sin[i];
+                reves+=cambio;
+            }
+           
+        }
+
+        function verificacion(palindromo_sin,reves){
+            if(palindromo_sin===reves){
+                document.write("<h1> Si es un palindromo.</h1>");
+            }else {
+                document.write("<h1> No es un palindromo.</h1>");
+
+            }
+        }
+    </script>
+</body>
+
+</html>

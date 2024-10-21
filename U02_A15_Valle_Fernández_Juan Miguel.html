@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        frase=prompt("Introduzca una frase.");
+        construccion_frase=[];
+        indice=0;
+
+        for(i=0;i<frase.length;i++){
+            caracter=frase[i];
+            if(isNaN(caracter)||caracter===' '){ //Si no es un numero o es un espacio se realiza accion.
+                construccion_frase[indice]=caracter;
+                indice++;
+            }else if(!isNaN(caracter)){ // si es un numero se utiliza continue para pasar a la siguiente accion.
+                continue;
+            }
+        }
+
+            document.write("<h1>"+construccion_frase.join('')+"</h1>"); //Utilizanmos join para mostrar el array en una sola cadena.
+            
+            
+        
+    </script>
+</body>
+</html>

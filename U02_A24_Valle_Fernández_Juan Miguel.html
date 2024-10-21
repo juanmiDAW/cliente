@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        numero1=1;
+        numero2=0;
+        numero=0;
+
+        limite=parseInt(prompt("Introduzca las ecuencia maxima."));
+
+        for(i=0;i<limite;i++){
+            numero=numero1+numero2;
+            numero2=numero1;
+            numero1=numero;
+
+            document.write(numero+" ,");
+        }
+
+    </script>
+</body>
+</html>

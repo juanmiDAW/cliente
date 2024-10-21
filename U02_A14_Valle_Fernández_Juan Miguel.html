@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let diccionario={casa:'house',mesa:'table',perro:'dog',gato:'cat'}; //Creamos un diccionadio calve-valor
+
+        palabra=prompt("Introduzca casa,mesa,perro o gato para traducirla a ingles.").toLowerCase(); //pedimos a usuario que escriba una de las palabras
+        document.write("<h1>La palabra "+palabra+" en ingles es: "+diccionario[palabra]+"</h1>"); /*Se muestra en html en un h1 en la que aparece el valor
+                                                                                                     de la clave introducida*/
+    </script>
+</body>
+</html>

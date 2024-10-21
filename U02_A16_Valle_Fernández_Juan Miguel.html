@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        numero = prompt("Introduzca un numero");
+        opcion = parseInt(prompt("Introduzca el numero de opcion:\n1.sumar solo parte entera.\n2.sumar todo."));
+
+        suma(numero, opcion);
+
+        function suma(numero, opcion) {
+            if (opcion === 1) {
+                entero = numero.split('.')[0]; //split separa la cadena en dos subcadena y coge con el indice 0.
+                let resultado = 0;
+
+
+                for (i = 0; i < entero.length; i++) { //recorre la cadena, convierte a int cada elemento y se suma con el resultado y se guarda en reultado a su vez
+                    resultado += parseInt(entero[i]);
+                }
+                document.write("<h1>El resultado es: " + resultado + "</h1>");
+            } else if (opcion === 2) {
+                numero_sin_coma = "";
+                resultado2 = 0;
+                numero_sin_coma += numero.replace('.', ''); //replace se reemplaza el . por espacio vacio.
+
+
+                for (i = 0; i < numero_sin_coma.length; i++) {
+                    resultado2 += parseInt(numero_sin_coma[i]);
+
+
+                }
+                document.write("<h1> La solucion es: " + resultado2 + "</h1>");
+
+
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

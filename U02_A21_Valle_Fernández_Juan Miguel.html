@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;
+                border: solid;
+                background-color: aquamarine;
+                border-radius: 20px;">Conversion de datos.</h1>
+
+
+    <script>
+        entrada = prompt("Introduzca datos");
+
+        conversion(entrada);
+
+        function conversion(entrada) {
+            var string="";
+            var numero=0;
+            var entero=0;
+            var decimal=0.0;
+            var booleano=true;
+
+            string = String(entrada);
+            document.write("<h1> Conversion a string: " + string + " , es un " + typeof (string)+"</h1>");
+
+                numero=Number(entrada);
+                document.write("<h1> Conversion a numero: " + numero + " , es un " + typeof (numero)+"</h1>");
+
+                    entero=parseInt(entrada);
+                    document.write("<h1> Conversion a entero: " + entero + " , es un " + typeof (entero)+"</h1>");
+
+                        decimal=parseFloat(entrada);
+                        document.write("<h1> Conversion a decimal: " + decimal + " , es un " + typeof (decimal)+"</h1>");
+
+                        
+                        if(typeof entero==="number"){
+                            booleano=Boolean(numero);
+                            document.write("<h1>Conversion a boolean: " + booleano + " , es un " + typeof (booleano)+"</h1>");
+
+                        }else if(typeof entrada==="string"){
+                            booleano=Boolean(entrada);
+                            document.write("<h1>Conversion a boolean: " + booleano + " , es un " + typeof (booleano)+"</h1>");
+                        } 
+
+        }
+
+    </script>
+</body>
+
+</html>

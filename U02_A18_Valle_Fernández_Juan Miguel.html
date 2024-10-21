@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var valores = [true, 5, false, "hola", "adios", 2];
+        cadena = [];
+        numeros = [];
+        logicos = [];
+        mas_caracteres="";
+        res_multi=1;
+        res_suma=0;
+
+
+        clasificar(valores);
+        operacion_cadena(cadena);
+        operacion_numero(numeros);
+        operacion_boolean(logicos);
+
+        
+        function clasificar(valores) {  //claificamos los elemeentos segun su tipo con typeof.
+            valores.forEach(element => {
+                if (typeof element === 'string') {
+                    cadena.push(element);
+                } else if (typeof element === "number") {
+                    numeros.push(element);
+                } else if (typeof element === "boolean") {
+                    logicos.push(element);
+                }
+
+            });
+        }
+
+        function operacion_cadena(cadena) {    //Decimos que cadenas es mas larga comparando los caractweres con .length que devuelve el numero de carrateres.
+            for (i = 0; i < cadena.length; i++) {
+                if(cadena[i].length>mas_caracteres.length){
+                    mas_caracteres=cadena[i];
+                }
+            }
+            document.write("<h1> La palabra mas larga es: "+mas_caracteres+"</h1>");
+        }
+
+        function operacion_numero(numeros){ 
+            frase_suma="";
+            frase_multi=""; //En esta funcion se suman y se multiplican los numeros del array.
+           
+            for(i=0;i<numeros.length;i++){
+                if(i<numeros.length){
+                    res_suma+=numeros[i];
+                    frase_suma+=numeros[i]+"+";
+
+                }
+            }
+
+            for(i=0;i<numeros.length;i++){
+                if(i<numeros.length){
+                    res_multi*=numeros[i];
+                    frase_multi+=numeros[i];
+                    frase_multi+="*";
+
+                }
+            }
+            
+            document.write("<h1>El resultado de la suma de: "+frase_suma+" es "+res_suma+"</h1>");
+            document.write("<h1>El resultado de la multiplicacion de: "+frase_multi+" es "+res_multi+"</h1>");
+
+        }
+
+        function operacion_boolean(logicos){
+            
+            resul_and=true; //En esta funcion se operann con AND y OR con los elemento boolen del array.
+            resul_or=true;
+
+            for(i=0;i<logicos.length;i++){
+                resul_and=resul_and && logicos[i];
+                resul_or=resul_or || logicos[i];
+
+            }
+
+            document.write("<h1>El resultado de las operaciones logicas con AND es: "+resul_and+"</h1>");
+            document.write("<h1>El resultado de las operaciones logicas con OR es: "+resul_or+"</h1>");
+
+
+        }
+    </script>
+</body>
+
+</html>

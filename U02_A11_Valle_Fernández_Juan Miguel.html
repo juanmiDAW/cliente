@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L','C', 'K', 'E'];
+
+        numero= parseInt(prompt("Introduzca el numero de D.N.I: "));
+        letra= prompt("Intoduza la letra del D.N.I: ").toUpperCase();
+        resto=0;
+        resul_letra="";
+
+        if(numero>99999999 || numero<0){
+            alert("Error el numero debe comprenderse entre 1 y 99999999");
+        }else{
+            resto=numero%23;
+            resul_letra=letras[resto];
+
+            if(resul_letra==letra){
+                document.write("<h1>El D.N.I es valido.</h1>");
+            }else {
+                document.write("<h1 style=color:red;>El D.N.I no es valido.</h1>");
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="imprimir"></pre>
+    <script>
+        resultado = "";
+        contador = 3;
+        contador2 = 0;
+
+        //Primera mitad
+        for (k = 0; k <= 3; k++) {
+            for (j = 0; j <= contador; j++) {
+                resultado += " ";
+            }
+
+            for (i = 0; i <= contador2; i++) {
+                resultado += "*";
+
+
+            }
+            contador -= 1;
+            contador2 += 2;
+
+
+            resultado += "<br>";
+
+        }
+        contador++; //al salir del anterior valia -1 se suma 1 para empezar el bucle ya con 1 espacio
+        contador2 -= 2;// al salir del anterior valia 9 le quitamos dos para empezarar como lo dejamos antes que 
+        //contara el contador del ultimo for activo. y asi hacer el de "saltarse una linea"
+
+
+        //Segunda mitad                                             
+        for (k = 0; k <= 3; k++) {
+            contador++;
+            for (j = 0; j <= contador; j++) {
+                resultado += " ";
+            }
+            contador2 -= 2;
+
+            for (i = 0; i <= contador2; i++) {
+                resultado += "*";
+
+
+            }
+
+
+
+            resultado += "<br>";
+        }
+
+        document.getElementById("imprimir").innerHTML = resultado;
+    </script>
+</body>
+
+</html>
