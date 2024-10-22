@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fecha_hoy=new Date();
+        var fecha_fin_anyo=new Date('2024-12-31');
+        var dia=fecha_fin_anyo.getDate();
+        var mes=fecha_fin_anyo.getMonth();
+        var anyo=fecha_fin_anyo.getFullYear();
+        var resultado=fecha_fin_anyo - fecha_hoy;
+        const DIAS_MILISEG=86400000;
+        resultado/=DIAS_MILISEG;
+        resultado=Math.round(resultado);
+        
+        document.write("<p> Quedan " + resultado + " dias para el" + dia + "/" + mes + "/" + anyo + "</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="parrafo"></p>
+
+    <script>
+        var fecha_hoy=new Date();   //Se crea un objeto de Date, devulve la fecha actual.
+        var fecha_nacimiento=new Date('1997-2-24');  //Creacion objeto con una fecha pasada por parametro
+        var dia=fecha_hoy.getDate() - fecha_nacimiento.getDate();   //obtenemos solos el dia
+        var mes=fecha_hoy.getMonth() - fecha_nacimiento.getMonth();  //obtenemos solos el mes
+        var anyo=fecha_hoy.getFullYear() - fecha_nacimiento.getFullYear();  //obtenemos solos el año
+
+        if (dia < 0){
+            dia+=30;
+            mes--;
+         }
+
+
+        document.getElementById("parrafo").innerHTML=("Tienes : " + dia + " dias " + mes + " meses " + anyo + " años.");
+        
+    </script>
+</body>
+</html>
