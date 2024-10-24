@@ -7,7 +7,13 @@
 </head>
 <body>
     <script>
-        window.open("https://www.google.com","miprima", "width=1000px, height=300px");
-    </script>
+const resultado = navigator.plugins;
+
+for (let i = 0; i < resultado.length; i++) {
+    const plugin = resultado[i];
+    document.write(plugin.name + '<br>');
+}
+
+</script>
 </body>
 </html>
