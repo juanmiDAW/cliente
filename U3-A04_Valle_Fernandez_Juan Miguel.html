@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fecha_actual = new Date();
+        var hora_actual = fecha_actual.getHours();
+
+        document.write("Fecha y hora actual: " + fecha_actual + "<br>");
+        
+        if(hora_actual>= 6 && hora_actual < 12){
+            document.write("Buenos dias");
+        } else if(hora_actual>=12 && hora_actual < 18){
+            document.write("Buenas tardes");
+        }else {
+            document.write("Buenas noches");
+        }
+    </script>
+</body>
+</html>

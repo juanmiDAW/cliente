@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Elija su opcion de zona horaria:
+        <ul>
+            <li>UTC -12 : Línea internacional de fecha del oeste</li>
+            <li>UTC -11 : Isla Midway, Samoa</li>
+            <li>UTC -10 : Hawai</li>
+            <li>UTC -9 : Alaska</li>
+            <li>UTC -8 : Hora del pacífico (USA y Canadá)</li>
+            <li>UTC -7 : Hora de las montañas rocosas (USA y Canadá)</li>
+            <li>UTC -6 : América central</li>
+            <li>UTC -5 : Hora central (USA y Canadá)</li>
+            <li>UTC -4 : Hora del Atlántico (Canadá)</li>
+            <li>UTC -3 : Buenos Aires, Asunción, Brasilia, Montevideo</li>
+            <li>UTC -2 : Atlántico central</li>
+            <li>UTC -1 : Azores</li>
+            <li>UTC 0 : Hora del meridiano de Greenwich, Londres, Dublín</li>
+            <li>UTC +1 : París, Madrid, Barcelona, Roma</li>
+            <li>UTC +2 : El Cairo</li>
+            <li>UTC +3 : Nairobi</li>
+            <li>UTC +4 : Bakú</li>
+            <li>UTC +5 : Ekaterimburgo</li>
+            <li>UTC +6 : Astana</li>
+            <li>UTC +7 : Bangkok</li>
+            <li>UTC +8 : Ulán Bator</li>
+            <li>UTC +9 : Tokio</li>
+            <li>UTC +10 : Sidney</li>
+            <li>UTC +11 : Islas Salomón</li>
+            <li>UTC +12 : Wellington</li>
+    
+        </ul>
+    </p>
+    <script>
+        // document.addEventListener("DOMContentLoaded", function {
+        //     var zona_horaria =prompt("Introduzca su opcion de zona horaria:");
+ 
+        // });
+
+        var zona_horaria = parseInt(prompt("Introduzca su opcion de zona horaria: "));
+        var fecha_UTC = new Date();
+        var hora_UTC = fecha_UTC.getUTCHours();
+        var minutos_UTC = fecha_UTC.getUTCMinutes();
+        var hora_horaria = 0;
+
+        
+
+        hora_horaria = hora_UTC + zona_horaria;
+                    if(hora_horaria < 0){
+                        hora_horaria += 24; 
+                    }
+                    if(hora_horaria > 24){
+                        hora_horaria -= 24;
+                    }
+                    texto = " UTC -12 : Línea internacional de fecha del oeste";
+
+        document.write("son las " + hora_horaria + ":" + minutos_UTC);
+
+        
+        
+        
+    </script>
+</body>
+</html>

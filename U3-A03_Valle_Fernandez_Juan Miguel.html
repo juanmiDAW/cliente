@@ -12,13 +12,19 @@
     <script>
         var fecha_hoy=new Date();   //Se crea un objeto de Date, devulve la fecha actual.
         var fecha_nacimiento=new Date('1997-2-24');  //Creacion objeto con una fecha pasada por parametro
+        var mes_nacimiento = fecha_nacimiento.getMonth();
         var dia=fecha_hoy.getDate() - fecha_nacimiento.getDate();   //obtenemos solos el dia
         var mes=fecha_hoy.getMonth() - fecha_nacimiento.getMonth();  //obtenemos solos el mes
         var anyo=fecha_hoy.getFullYear() - fecha_nacimiento.getFullYear();  //obtenemos solos el año
 
         if (dia < 0){
-            dia+=fecha_hoy.get
+            dia += new (fecha_hoy.getUTCFullYear(), fecha_hoy.getMonth(),0).getDate();  //devuelve el numero de dias que tiene el mes anterior, si se le pasa 0 por parametro
             mes--;
+         }
+
+         if (mes < 0){
+            anyo--;
+            mes += 12;
          }
 
 

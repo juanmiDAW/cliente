@@ -7,15 +7,16 @@
 </head>
 <body>
     <script>
-        var fecha_hoy=new Date();
-        var fecha_fin_anyo=new Date('2024-12-31');
-        var dia=fecha_fin_anyo.getDate();
-        var mes=fecha_fin_anyo.getMonth();
-        var anyo=fecha_fin_anyo.getFullYear();
-        var resultado=fecha_fin_anyo - fecha_hoy;
-        const DIAS_MILISEG=86400000;
-        resultado/=DIAS_MILISEG;
-        resultado=Math.round(resultado);
+        var fecha_hoy=new Date();   //Se crea un objeto de Date, devulve la fecha actual.
+        var fecha_fin_anyo=new Date('2024-12-31');  //Creacion objeto con una fecha pasada por parametro
+        var dia=fecha_fin_anyo.getDate();   //obtenemos solos el dia
+        var mes=fecha_fin_anyo.getMonth();  //obtenemos solos el mes
+        var anyo=fecha_fin_anyo.getFullYear();  //obtenemos solos el año
+        var resultado=fecha_fin_anyo - fecha_hoy;   //le restamos la fecha actual a la fecha pasada por paremtro.
+
+        const DIAS_MILISEG=86400000; // constante con la cantidad de milisegundos que tiene un dia
+        resultado/=DIAS_MILISEG;    //dividimos los milisegundos de la diferencia para pasarlos a dias.
+        resultado=Math.round(resultado);    //con el metodo round de la clase Math lo redondeamos al mas cercano
         
         document.write("<p> Quedan " + resultado + " dias para el" + dia + "/" + mes + "/" + anyo + "</p>");
     </script>

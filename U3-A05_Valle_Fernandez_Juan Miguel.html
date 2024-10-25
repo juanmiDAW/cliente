@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hora(){
+            var fecha_actual = new Date();
+            var hora_actual = fecha_actual.getHours();
+            var minutos_acutal = fecha_actual.getMinutes();
+            var hora_pm = "";
+
+            if(hora_actual > 12){
+                hora_actual -= 12;
+                hora_pm = " PM";
+            } else {
+                hora_pm = " AM";
+            }
+
+            return document.write("Son las " + hora_actual +" : " + minutos_acutal + hora_pm);
+        }
+
+        setInterval(hora(),60000);
+
+
+    </script>
+</body>
+</html>
