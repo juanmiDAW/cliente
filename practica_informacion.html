@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="alert(location.href);">Saber direccion</button>    <!--con este boton sacamos una pantalla standar con la direccion-->
+    <button onclick="history.back()">Atras</button> <!--boton en la que navegamos a la venta posterior-->
+    <button onclick="history.forward">Siguiente</button> <!--boton que navegamos a la ventana siguiente-->
+    <br>    
+    <script>
+        document.write(window.innerWidth+" x "+innerHeight+"<br>");  //  obtenemos la informacion del anckho y del alto de la pantalla
+        document.write(navigator.language+"<br>");  // obtenemos la informacion del lenguaje del navegador
+        document.write(navigator.onLine+"<br>"); // deuvlve true o false si el navegador esta en linea
+
+    </script>
+
+</body>
+</html>

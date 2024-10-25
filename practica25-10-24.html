@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button><a href="practica_informacion.html">Siguiente</a></button>
+    <button onclick="history.back()">Atras</button> <!--boton en la que navegamos a la venta posterior-->
+    <button onclick="history.forward">Siguiente</button> <!--boton que navegamos a la ventana siguiente-->
+    
+    <br>
+
+    <script>
+        var saludo = "Hola, hoy es el dia de la semana ";   //Cadena con frase de saludo
+        var fecha_actual = new Date();  //se crea un objeto que devuelve la fecha actual y hora
+        var dia = fecha_actual.getDay();    //se obtiene el dia  de la semana en numero 
+        var dia_numero = fecha_actual.getDate();    //se obtiene el dia del mes numero
+        var mes = fecha_actual.getMonth();  //se obtiene el mes y se gaurada en variable
+        var anyo = fecha_actual.getFullYear();  //se obtiene el año actual
+        var dia_letra = ""; //creacion de variable a la que se le añade el resultado del switch
+        var nombre=prompt("Introduzca tu nombre");  //pantalla sale un mesaje y se le introduce el texto pedido
+        
+        switch (dia) {  //segun el numero que devuelve el .getDay se transforma a palabra
+            case 0:
+                {
+                    dia_letra = "Domingo";
+                }
+                break;
+                case 1:
+                    {
+                    dia_letra = "Lunes";
+                }
+                break;
+                
+                case 2:
+                    {
+                        dia_letra = "Marte";
+                    }
+                    break;
+                    
+                    case 3:
+                        {
+                            dia_letra = "Miercoles";
+                        }
+                        break;
+                        
+                        case 4:
+                            {
+                    dia_letra = "Jueves";
+                }
+                break;
+                
+                case 5:
+                    {
+                        dia_letra = "Viernes";
+                    }
+                    break;
+                    
+                    case 6:
+                        {
+                            dia_letra = "Sabado";
+                        }
+                        break;
+                        
+                        
+                    }
+                    document.write(saludo + " " + dia_letra + "<br> Fecha de hoy: " + dia_numero + "/" + mes + "/" + anyo+"<br>");
+                    document.write("Bienvenido "+nombre);
+    </script>
+</body>
+
+</html>
