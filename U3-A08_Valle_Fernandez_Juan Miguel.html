@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="obtener_valores();area_circunferencia(radio);area_triangulo(base,altura);return false;">
+        <label for="">Introducir radio: 
+            <input type="number" name="" id="radio">
+        </label>
+        <hr>
+        <label for="">Introducir base y altura: 
+            <br>
+            <input type="number" name="" id="base">
+            <br>
+            <input type="number" name="" id="altura">
+        </label>
+        <br>
+        <button type="submit">Enviar</button>    
+    </form>
+    
+    <p id="circunferencia"></p>
+    
+    <p id="triangulo"></p>
+    
+    <script>
+        var radio = 0;
+        var base = 0;
+        var altura = 0;
+        var area_circun = 0;
+        var area_trian = 0;
+
+        area_circunferencia(radio);
+        area_triangulo(base, altura);
+
+        function obtener_valores(){
+            radio = parseFloat(document.getElementById("radio").value);
+            base = parseFloat(document.getElementById("base").value);
+            altura = parseFloat(document.getElementById("altura").value);
+            
+        }
+
+        function area_circunferencia(radio){
+            area_circun = Math.PI * Math.pow(radio,2);
+
+        document.getElementById("circunferencia").innerHTML = ("El area de la circulo es: " +area_circun.toFixed(2) + "cm2" );
+        }
+
+        function area_triangulo(base, altura){
+            area_trian=(base*altura)/2;
+            document.getElementById("triangulo").innerHTML = ("El area del triangulo es: " +area_trian.toFixed(2) + "cm2");
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var entrada = prompt("Introduzca dia de la semana");
+        const EXPRESION = /^(lunes|martes|miercoles|jueves|viernes|sabado|domingo)$/;
+        var verificacion = EXPRESION.test(entrada); //devuelve true si se cumple con la expresion regular
+
+        if(verificacion){
+            document.write(entrada + " es valido.");
+        } else {
+            document.write(entrada + " no es valido");
+        }
+    </script>
+</body>
+</html>
