@@ -18,17 +18,17 @@
     <script>
         function entrada() {
             var texto_entrada = "";
-            texto_entrada = document.getElementById("texto").value;
-            const EXPRESION = /(?<=^|\.\s+)([A-Z][a-z]*)/g;
-            var resultado = texto_entrada.match(EXPRESION);
+            texto_entrada = document.getElementById("texto").value;//obtenemos la entrada del textarea
+            const EXPRESION = /(?<=^|\.\s+)([A-Z][a-z]*)/g;//expresion regular que captura la primera palabra con letra mayuscula.
+            var resultado = texto_entrada.match(EXPRESION);//con el metodo match hacemos la comprobaciones y nos devuelve el array con las palabras
             var palabras = "";
 
             if (resultado) {
-                resultado.forEach(element => {
+                resultado.forEach(element => { //hacemos un for each para recorrer el array y recuperar las palabras
                     palabras += element + ", ";
                 });
                 
-                document.getElementById("parrafo").innerHTML = palabras;
+                document.getElementById("parrafo").innerHTML = palabras;//volcamos en el HTML las palabras.
             }
 
         }

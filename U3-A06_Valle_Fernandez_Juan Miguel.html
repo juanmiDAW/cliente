@@ -1,99 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <p>
+    <label>
         Elija su opcion de zona horaria:
-
-        <select name="" id="lista">
-            <option value="1">UTC -12 : Línea internacional de fecha del oeste</option>
-            <option value="2">UTC -11 : Isla Midway, Samoa</option>
-            <option value="3">UTC -10 : Hawai</option>
-            <option value="4">UTC -9 : Alaska</option>
-            <option value="5">UTC -8 : Hora del pacífico (USA y Canadá)</option>
-            <option value="6">UTC -7 : Hora de las montañas rocosas (USA y Canadá)</option>
-            <option value="7">UTC -6 : América central</option>
-            <option value="8">UTC -5 : Hora central (USA y Canadá)</option>
-            <option value="9">UTC -4 : Hora del Atlántico (Canadá)</option>
-            <option value="10">UTC -3 : Buenos Aires, Asunción, Brasilia, Montevideo</option>
-            <option value="11">UTC -2 : Atlántico central</option>
-            <option value="12">UTC -1 : Azores</option>
-            <option value="13">UTC 0 : Hora del meridiano de Greenwich, Londres, Dublín
-
-            </option>
-            <option value="14">UTC +1 : París, Madrid, Barcelona, Roma</option>
-            <option value="15">UTC +2 : El Cairo</option>
-            <option value="16">UTC +3 : Nairobi</option>
-            <option value="17">UTC +4 : Bakú</option>
-            <option value="18">UTC +5 : Ekaterimburgo</option>
-            <option value="19">UTC +6 : Astana</option>
-            <option value="20">UTC +7 : Bangkok</option>
-            <option value="21">UTC +8 : Ulán Bator</option>
-            <option value="22">UTC +9 : Tokio</option>
-            <option value="23">UTC +10 : Sidney</option>
-            <option value="24">UTC +11 : Islas Salomón</option>
-            <option value="25">UTC +12 : Wellington</option>
+        <!-- en este select, cada value del opcion tiene el valor de las horas a operar. -->
+        <!-- con el evento onclick llamamos a la funcion cada vez que pinchemos sobre una opcion  -->
+        <select name="" id="lista" onclick="obtener_valores()">
+            <option value="-12">UTC -12 : Línea internacional de fecha del oeste</option>
+            <option value="-11">UTC -11 : Isla Midway, Samoa</option>
+            <option value="-10">UTC -10 : Hawai</option>
+            <option value="-9">UTC -9 : Alaska</option>
+            <option value="-8">UTC -8 : Hora del pacífico (USA y Canadá)</option>
+            <option value="-7">UTC -7 : Hora de las montañas rocosas (USA y Canadá)</option>
+            <option value="-6">UTC -6 : América central</option>
+            <option value="-5">UTC -5 : Hora central (USA y Canadá)</option>
+            <option value="-4">UTC -4 : Hora del Atlántico (Canadá)</option>
+            <option value="-3">UTC -3 : Buenos Aires, Asunción, Brasilia, Montevideo</option>
+            <option value="-2">UTC -2 : Atlántico central</option>
+            <option value="-1">UTC -1 : Azores</option>
+            <option value="0">UTC 0 : Hora del meridiano de Greenwich, Londres, Dublín</option>
+            <option value="+1">UTC +1 : París, Madrid, Barcelona, Roma</option>
+            <option value="+2">UTC +2 : El Cairo</option>
+            <option value="+3">UTC +3 : Nairobi</option>
+            <option value="+4">UTC +4 : Bakú</option>
+            <option value="+5">UTC +5 : Ekaterimburgo</option>
+            <option value="+6">UTC +6 : Astana</option>
+            <option value="+7">UTC +7 : Bangkok</option>
+            <option value="+8">UTC +8 : Ulán Bator</option>
+            <option value="+9">UTC +9 : Tokio</option>
+            <option value="+10">UTC +10 : Sidney</option>
+            <option value="+11">UTC +11 : Islas Salomón</option>
+            <option value="+12">UTC +12 : Wellington</option>
         </select>
-        <!-- <ul>
-            <li>UTC -12 : Línea internacional de fecha del oeste</li>
-            <li>UTC -11 : Isla Midway, Samoa</li>
-            <li>UTC -10 : Hawai</li>
-            <li>UTC -9 : Alaska</li>
-            <li>UTC -8 : Hora del pacífico (USA y Canadá)</li>
-            <li>UTC -7 : Hora de las montañas rocosas (USA y Canadá)</li>
-            <li>UTC -6 : América central</li>
-            <li>UTC -5 : Hora central (USA y Canadá)</li>
-            <li>UTC -4 : Hora del Atlántico (Canadá)</li>
-            <li>UTC -3 : Buenos Aires, Asunción, Brasilia, Montevideo</li>
-            <li>UTC -2 : Atlántico central</li>
-            <li>UTC -1 : Azores</li>
-            <li>UTC 0 : Hora del meridiano de Greenwich, Londres, Dublín</li>
-            <li>UTC +1 : París, Madrid, Barcelona, Roma</li>
-            <li>UTC +2 : El Cairo</li>
-            <li>UTC +3 : Nairobi</li>
-            <li>UTC +4 : Bakú</li>
-            <li>UTC +5 : Ekaterimburgo</li>
-            <li>UTC +6 : Astana</li>
-            <li>UTC +7 : Bangkok</li>
-            <li>UTC +8 : Ulán Bator</li>
-            <li>UTC +9 : Tokio</li>
-            <li>UTC +10 : Sidney</li>
-            <li>UTC +11 : Islas Salomón</li>
-            <li>UTC +12 : Wellington</li>
-    
-        </ul> -->
-    </p>
+    </label>
+    <!-- parrafo para mostrar el resultado -->
+    <p id="parrafo"></p>
     <script>
-        // document.addEventListener("DOMContentLoaded", function {
-        //     var zona_horaria =prompt("Introduzca su opcion de zona horaria:");
- 
-        // });
 
-        var zona_horaria = parseInt(prompt("Introduzca su opcion de zona horaria: "));
-        var fecha_UTC = new Date();
-        var hora_UTC = fecha_UTC.getUTCHours();
-        var minutos_UTC = fecha_UTC.getUTCMinutes();
-        var hora_horaria = 0;
 
-        
+        var zona_horaria = 0; //alamacena el value del option
+        var fecha_UTC = new Date(); //crea y asigna objeto date
+        var hora_UTC = fecha_UTC.getUTCHours(); //se obtiene y alamcena las horas en UTC
+        var minutos_UTC = fecha_UTC.getUTCMinutes(); //se obtiene y alamcena las minutos en UTC
+        var hora_horaria = 0; //se crea para su uso posterior
 
-        hora_horaria = hora_UTC + zona_horaria;
-                    if(hora_horaria < 0){
-                        hora_horaria += 24; 
-                    }
-                    if(hora_horaria > 24){
-                        hora_horaria -= 24;
-                    }
+        // con esta funcion optenemos los valores de la lista desplegable y si las horas es >24 o <0 se ajusta
 
-        document.write("son las " + hora_horaria + ":" + minutos_UTC);
+        function obtener_valores() {
+            //obtenemos el valor de value del option, se convierte a int y se asigna.
+            zona_horaria = parseInt(document.getElementById("lista").value);
 
-        
-        
-        
+            hora_horaria = hora_UTC + zona_horaria;
+            if (hora_horaria < 0) {
+                hora_horaria += 24;
+            }
+            if (hora_horaria >= 24) {
+                hora_horaria -= 24;
+            }
+
+            document.getElementById("parrafo").innerHTML = ("son las " + hora_horaria + ":" + minutos_UTC);
+
+        }
+
+
+
+
     </script>
 </body>
+
 </html>
