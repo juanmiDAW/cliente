@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form onsubmit="obtener_valores();area_circunferencia(radio);area_triangulo(base,altura);return false;">
+    <form onsubmit="obtener_valores();return false;">//activamos la funcion obtener_valores
         <label for="">Introducir radio: 
             <input type="number" name="" id="radio">
         </label>
@@ -21,34 +21,37 @@
         <br>
         <button type="submit">Enviar</button>    
     </form>
-    
+    //parrafos para mostrar la respuesta
     <p id="circunferencia"></p>
     
     <p id="triangulo"></p>
     
     <script>
-        var radio = 0;
-        var base = 0;
-        var altura = 0;
-        var area_circun = 0;
-        var area_trian = 0;
-
-        area_circunferencia(radio);
-        area_triangulo(base, altura);
-
+        
+        
         function obtener_valores(){
+            var radio = 0;
+            var base = 0;
+            var altura = 0;
+            var area_circun = 0;
+            var area_trian = 0;
+
+            //obtenemos los valores del formulario y lo pasamos a una variable
             radio = parseFloat(document.getElementById("radio").value);
             base = parseFloat(document.getElementById("base").value);
             altura = parseFloat(document.getElementById("altura").value);
+            //llamamos a las  dos fuinciones realizadas mas abajo
+            area_circunferencia(radio);
+            area_triangulo(base, altura);
             
         }
-
+        //funcion para calcular el area de la circunferencia
         function area_circunferencia(radio){
             area_circun = Math.PI * Math.pow(radio,2);
 
         document.getElementById("circunferencia").innerHTML = ("El area de la circulo es: " +area_circun.toFixed(2) + "cm2" );
         }
-
+        //funcion para calcular el area del  triangulo
         function area_triangulo(base, altura){
             area_trian=(base*altura)/2;
             document.getElementById("triangulo").innerHTML = ("El area del triangulo es: " +area_trian.toFixed(2) + "cm2");
