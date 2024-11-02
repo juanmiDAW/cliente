@@ -6,6 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        //obtenemos la parte de la URL con donde se encuentra ? en adelante
+        var valores = window.location.search;
+        //creamos el objeto siguiente para optener el valor del parametro
+        var valores = new URLSearchParams(valores);
+        //obtenemos el valor del parametro resultado, lo convertimos a int y asignamos
+        var resultado = parseInt(valores.get("resultado"));
+        //se muestra en el resultado.html con un h1 
+        document.write("<h1>El resultado de la operacion es: " +resultado);
+
+    </script>
 </body>
 </html>

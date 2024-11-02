@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resta</title>
 </head>
 <body>
-    
+    <form action="" >
+        <label for="">Restar
+        <input type="number" id="num1">
+        -
+        <input type="number" id="num2">
+    </label>
+    <button type="submit" onclick="operacion();">Operar</button>
+    </form>
+
+    <script>
+        
+        
+        function operacion(){
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var resultado = num1 - num2;
+            window.open(`resultado.html?resultado=${resultado}`,"resultado","height=100,windth=100");
+        }
+    </script>
 </body>
+
 </html>
