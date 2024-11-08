@@ -1,10 +1,17 @@
 var valores = "";
 var operador = "";
+var validar ="";
+const EXPRESION = /(^\d+,\d)/g;
 
 function calcular() {
     valores = document.getElementById('valor').value;
     operador = document.getElementById('operador').value;
-    document.getElementById('resultado').innerHTML = "<h1> Resultado: " + eval(`${operador}(${valores});`) + "</h1>";
+    validar = EXPRESION.test(valores);
+    if(validar === true){
+        document.getElementById('resultado').innerHTML = "<h1> Resultado: " + eval(`${operador}(${valores});`) + "</h1>";
+    } else {
+        document.getElementById("resultado").innerHTML = "<h1> Formato incorrecto </h1>";
+    }
 }
 
 function sumar(...args) {
@@ -38,4 +45,3 @@ function dividir(...args) {
     }
     return resultado;
 }
-
