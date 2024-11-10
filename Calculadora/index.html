@@ -11,10 +11,12 @@
 <body>
     <p>
         <label for="">Valores:
+            <!--input para la entrada de valores a calcular-->
             <input type="text" id="valor">
         </label>
         <br>
         <label for="">Operacion:
+            <!--lista desplegable para elegir la operacion que se desee-->
             <select name="" id="operador">
                 <option value="sumar">Sumar</option>
                 <option value="restar">Restar</option>
@@ -23,11 +25,13 @@
             </select>
         </label>
         <br>
+        <!--creacion de boton que llama  a la funcion calcular()-->
         <button onclick="calcular()">Calcular</button>
     </p>
 
     <div>
         <label for="">Resultado
+            <!--en este parrafo se mostrara el resultados de la operacion-->
             <p name="" id="resultado"></p>
         </label>
     </div>
