@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <h1 id="principio"></h1>
+
+    <h1 id="resultado"></h1>
     <script>
-        numeros = [9,4,7,5,1,8,2];
-        numero_ordenados = numeros.sort();
-        document.write("<h1>" + numero_ordenados  + "</h1>");
+        //definimos un array desordenado
+        numeros = [9, 4, 7, 5, 1, 8, 2];
+        //imprimimos en h1 el array de origen
+        document.getElementById("principio").innerHTML = "Sin ordenar: " + numeros;
+        //para la simulacion del sort(), se ha empleado el metodo de ordenacion burbuja.
+        //for para volver a iterar sobre los elementos del array, por si un valor mayor se hubiera quedado por detras.
+        for (let i = 0; i < numeros.length; i++) {
+            //for para iterar sobre el indice del array
+            for (let i = 1; i < numeros.length; i++) {
+                //se crea una variable que actua como comodin para poder alamacenar el valor mientras se hace el cambio.
+                comodin = 0;
+                // si el primer indice es mayor que el siguiente:..
+                if (numeros[i - 1] > numeros[i]) {
+                    // se coge el valor del indice y se alamacena en comodin...
+                    comodin = numeros[i - 1];
+                    //se cambia el valor del indice mayor y se almacena en del indice anterior...
+                    numeros[i - 1] = numeros[i];
+                    //el comodin(antes indice menor) se le asigna al indice siguiente
+                    numeros[i] = comodin;
+                }
+            }
+        }
+        //se muestra en un HTML en un h1 con id resultado
+        document.getElementById("resultado").innerHTML = "Ordenado: " + numeros;
     </script>
 </body>
+
 </html>
