@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,37 +10,48 @@
     <h1 id="parrafo"></h1>
 
     <script>
+        //declaracion y inicializacion de varibales
         numeros_aleatorios = [];
         ordenado = [];
         resultado = [];
-
+        //llamada a las funciones para su ejecucion
         crear_ramdom();
         menor_mayor(numeros_aleatorios);
-        resultado = ordenado.coger_menor_mayor();
+        //IMPORTANTE: el prototipo tiene que aparecer antes en el flujo de ejecucion que la llamada de la funcion 
+        //se define un prototipo de Array que se le añade un funcion
+        Array.prototype.coger_menor_mayor = function() {
+            //con this operamos sobre el obejeto prototipo
+            //con shift() obtenemos el valor del primer indice del array
+            resultado[0] = this.shift();
+            //con pop obtenemos el valor del ultimo indice del array
+            resultado[1] = this.pop();
+
+            //muestra en HTML para comprender que hace la funcion
+            document.write("<p>Estado del prototipo: " + resultado + "</p>");
+        }
+
+        ordenado.coger_menor_mayor();
         mostrar(resultado);
 
+        //funcion que crea un numero aleatorio entre el 1 y 1000.
+        // el bucle for se encarga a que indice del array se le asigna los valores 
         function crear_ramdom() {
             for (i = 0; i <= 9; i++) {
                 numeros_aleatorios[i] = Math.floor(Math.random() * 1000) + 1;
             }
+            //se muestra en el HTML el estado original del array para poder comprender los cambios.
             document.write("<p> array de numeros aleatorios: "+numeros_aleatorios+"</p>");
         }
 
+        //funcion que ordena de menor a mayor el array con la funcion sort(), que devuelve el array ordenado de menor a mayor.
         function menor_mayor(numeros_aleatorios) {
-            ordenado = numeros_aleatorios.sort();
+            ordenado = numeros_aleatorios.sort((a,b) => a - b);
+            //de nuevo se muestra en el HTML el estado ordenado para su comprension
             document.write("<p> array de numeros aleatorios ordenado de menor a mayor: "+ordenado+"</p>");
         }
+        //funcion encargada de coger el primer indice del array y el ultimo y mediante el push se almacena al final del array cada elemento 
 
-        Array.prototype.coger_menor_mayor = function() {
-            numeros = [];
-            for (i = 0; i <= 9; i++)
-                if (i == 0 || i == 9) {
-                    resultado.push(numeros[i]);
-                }
-                return numeros;
-        }
-
-
+        //funcion encargada de mostrar los resultado final de los procedimientos.
         function mostrar(resultado){
             document.getElementById("parrafo").innerHTML = "El resultado es : " + resultado[0] + " es el numero menor y " + resultado[1] + " es el numero mayor.";
         }

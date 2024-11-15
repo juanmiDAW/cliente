@@ -38,12 +38,10 @@
         }
         //funcion encargada de coger el primer indice del array y el ultimo y mediante el push se almacena al final del array cada elemento 
         function coger_menor_mayor(ordenado) {
-            for (i = 0; i <= 9; i++)
-            //si... la iteraccion corresponde con el indice alamcena al final del array
-                if (i == 0 || i == 9) {
-                    resultado.push(ordenado[i]);
-                }
-                //muestra en HTML para comprender que hace la funcion
+            resultado[0] = ordenado.slice(0, 1);
+            resultado[1] = ordenado.slice(9, 10);
+
+            //muestra en HTML para comprender que hace la funcion
                 document.write("<p>el menor y el mayor: "+resultado+"</p>");
         }
 
