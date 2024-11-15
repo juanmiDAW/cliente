@@ -32,7 +32,7 @@
 
         //funcion que ordena de menor a mayor el array con la funcion sort(), que devuelve el array ordenado de menor a mayor.
         function menor_mayor(numeros_aleatorios) {
-            ordenado = numeros_aleatorios.sort();
+            ordenado = numeros_aleatorios.sort((a,b) => a - b);
             //de nuevo se muestra en el HTML el estado ordenado para su comprension
             document.write("<p> array de numeros aleatorios ordenado de menor a mayor: "+ordenado+"</p>");
         }
