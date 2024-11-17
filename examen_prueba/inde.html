@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="operar('sumar');" id="sumar" value="sumar">Sumar</button>
+    <button onclick="operar('restar');" id="restar" value="restar">Restar</button>
+
+    <script>
+        function operar(boton){
+        operador = document.getElementById(boton).value;
+
+            window.open(`operar.html?operador=${operador}`, "", "width=600, height=400");
+    
+
+      
+    
+    }
+    </script>
+
+</body>
+</html>
