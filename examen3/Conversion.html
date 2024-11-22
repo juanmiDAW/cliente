@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de conversion</title>
+</head>
+<body>
+    <p id="resultado"></p>
+    <p id="pantalla"></p>
+    <button onclick="history.back();"> Volver atras</button>
+    <script>
+        var parametros = window.location.search;
+        parametros = new URLSearchParams(parametros);
+        origen = parametros.get("origen");
+        destino = parametros.get("destino");
+        cantidad = parametros.get("cantidad");
+
+        if(origen == "kg" && destino == "gr"){
+            resultado = cantidad * 1000;
+        }else if(origen == "kg" && destino == "mg"){
+            resultado = cantidad * 1000000;
+        }else if(origen == "g" && destino == "kg"){
+            resultado = cantidad/1000;
+        }else if(origen == "g" && destino == "mg"){
+            cantidad == cantidad * 1000;
+        }else if(origen == "mg" && destino == "g"){
+            resultado = cantidad / 1000;
+        }else if(origen == "mg" && destino == "kg"){
+            resultado = cantidad / 1000000;
+        }
+
+        ancho = window.innerWidth;
+        alto = window.innerHeight;
+
+        document.getElementById("resultado").innerHTML="El resultado es: " + resultado + " " + destino;
+        document.getElementById("pantalla").innerHTML="El tamaño de la pantalla es: " + ancho +" x " + alto;
+
+
+
+</script>
+    
+</body>
+</html>

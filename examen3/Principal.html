@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Unidades de Peso</title>
+</head>
+
+<body>
+    <select name="" id="origen">
+        <option value="kg">kilogramo</option>
+        <option value="g">gramos</option>
+        <option value="mg">miligramos</option>
+    </select>
+    <select name="" id="destino">
+        <option value="kg">kilogramo</option>
+        <option value="g">gramos</option>
+        <option value="mg">miligramos</option>
+    
+    </select>
+    
+    <input type="text" name="" id="cantidad">
+
+    <button onclick="calcular();">Calcular</button>
+
+    <script>
+        function calcular(){
+        var origen = document.getElementById("origen").value;
+        var destino = document.getElementById("destino").value;
+        var cantidad = parseInt(document.getElementById("cantidad").value);
+        window.open(`Conversion.html?origen=${origen}&destino=${destino}&cantidad=${cantidad}`,"", "width=400, height=400");
+        }
+
+    </script>
+</body>
+
+</html>
