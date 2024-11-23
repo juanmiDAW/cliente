@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio tipo 1</title>
+</head>
+<body>
+    <h1>Informacio</h1>
+    <p>completa el javascript enlos espcios indicados para mostrar diversas propiedades de la pantalla y de la ventana del navegador</p>
+    <h2>Infomracion de la Pantalla</h2>
+    <p>Ancho total: <span id="pantallaAnchoTotal"></span></p>
+    <p>Alto Total: <span id="pantallaAltoTotal"></span></p>
+    <p>Ancho Disponible: <span id="pantallaAnchoDisponible"></span></p>
+    <p>Alto Disponible <span id="pantallaAltoDisponible"></span></p>
+    <p>Profundidad del pixel: <span id="escalaPixel"></span></p>
+
+    <h2>Informacion de la Ventana</h2>
+    <p>Ancho Interior de la Ventana: <span id="ventanaAcnhoInterior"></span></p>
+    <p>Alto interior de  la ventana: <span id="ventanaAltoInterior"></span></p>
+    <p>Scroll Horizontal: <span id="scrollHorizontal"></span></p>
+    <p>Scroll Vertical: <span id="scrollVertical"></span></p>
+    <script>
+        document.getElementById("pantallaAnchoTotal").innerHTML=window.screen.width;
+
+        document.getElementById("pantallaAltoTotal").innerHTML=window.screen.height;
+
+        document.getElementById("pantallaAnchoDisponible").innerHTML=window.outerWidth;
+
+        document.getElementById("pantallaAltoDisponible").innerHTML=window.outerHeight;
+
+        document.getElementById("ventanaAcnhoInterior").innerHTML=window.innerWidth;
+
+        document.getElementById("ventanaAltoInterior").innerHTML=window.innerHeight;
+
+
+        document.getElementById("scrollHorizontal").innerHTML=window.scrollX;
+
+
+        document.getElementById("scrollVertical").innerHTML=window.scrollY;
+
+        
+    </script>
+</body>
+</html>

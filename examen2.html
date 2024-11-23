@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Tipo B- JAvaScript</title>
+</head>
+<body>
+    <h1>Ejecrcicio Tipo B</h1>
+    <p>Completa el JavaScript enlos espacios indicados para realizar calculos y validaciones usando 'Math' y 'Date' y expresione regulares.</p>
+
+    <h2>Opreaciones Matematicas</h2>
+    <p>Valor absoluto de -42 <span id="valorAbsoluto"></span></p>
+    <p>Redonde el numero 7.675 al numero entero mas cercano: <span id="redondeo"></span></p>
+    <p>Maximo de numeros(3,9,-7,20): <span id="maximo"></span></p>
+    <p>Minimo de los numeros (3,9,-7,20): <span id="minimo"></span></p>
+
+    <h2>Manipulacion de Fecha</h2>
+    <p>Dia de la semana actual <span id="diaSemana"></span></p>
+    <p>Hora actual en formato 24 horas: <span id="horaFormato24"></span></p>
+    <p>Minutos actuales: <span id="minutosActuales"></span></p>
+    <p>Milisegundos desde 1970 <span id="milisegundos1970"></span></p>
+
+    <h2>Validacion de expresion regular</h2>
+    <p>Comprueba mediante una expresion regular si el siguiente texto es un numero de telefono movil de españa valido: "+34 652 123 456"</p>
+
+    <p>TElefono valido: <span id="validoTelefono"></span></p>
+
+    <script>
+                document.getElementById("valorAbsoluto").innerHTML=Math.abs(-42);
+
+                document.getElementById("redondeo").innerHTML=Math.round(7.675);
+
+                document.getElementById("maximo").innerHTML=Math.max(3,9,-7,20);
+
+                document.getElementById("minimo").innerHTML=Math.min(3,9,-7,20);
+
+                dia_actual = new Date();
+
+                document.getElementById("diaSemana").innerHTML=dia_actual.getDay();
+
+                document.getElementById("horaFormato24").innerHTML= dia_actual.getHours();
+
+                document.getElementById("minutosActuales").innerHTML=dia_actual.getMinutes();
+
+                document.getElementById("milisegundos1970").innerHTML=dia_actual.getTime();
+
+                const EXPRESION = /^\+\d{2,3} \d{9}$/;
+
+                var numero = "+34 652123456";
+
+                var validacion = EXPRESION.test(numero);
+
+                document.getElementById("validoTelefono").innerHTML=validacion;
+
+    </script>
+
+    
+</body>
+</html>
