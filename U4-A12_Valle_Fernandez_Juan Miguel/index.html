@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="margin: 10px;">
+        <label for=""> Añadir articulo:
+            <input type="text" name="" id="entrada">
+        </label>
+    </div>
+
+    <button onclick="anyadir();">Añadir al articulo</button>
+    <button onclick="eliminiar_primero();">Eliminar el primero de la lista</button>
+    <button onclick="eliminar_ultimo();">Elminar el ultimo de la lista</button>
+    <button onclick="mostrar_3_primeros();">Mostrar los tres primeros</button>
+    <div style="display: flex; column-gap: 5px;">
+        <p id="mostrar" style="border: 1px solid black; width: 50vw ;height: 4vw;"></p>
+        <p id="mostrar2" style="border: 1px solid black; width: 50vw ;height: 4vw;"><b>Los tres primeros son: </b></p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Añadir tarea:
+        <input type="text" id="tarea">
+        <select name="" id="estado" >
+            <option value="completada">Completada</option>
+            <option value="pendiente">Pendiente</option>
+        </select>
+    </label>
+
+    <button onclick="anyadir();">Añadir</button>
+    <button onclick="completada();">Marcar como completada</button>
+    <button onclick="eliminar();">Eliminar tarea</button>
+    
+    <br>
+
+    <label for="">Filtrar por:
+        <select name="" id="filtro" >
+            <option value="completada">Completada</option>
+            <option value="pendiente">Pendiente</option>
+        </select>
+    </label>
+    <button onclick="filtrar();">Filtrar</button>
+
+    <p id="mostrar"></p>
+    <p id="mostrar_filtro"></p>
+
+</body>
+
+</html>
