@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Valor:
+        <input type="text" id="entrada">
+    </label>
+    <button onclick="buscar();">Buscar</button>
+    <p id="original"></p>
+    <p id="reves"></p>
+    <p id="sumatorio"></p>
+    <p id="resultado"></p>
+
+    <script>
+        var n_impares = [];
+        var sumatorio = 0;
+        var reves = [];
+        //bucle for para añadir los numeros impares al array.
+        for (i = 1; i <= 21; i += 2) {
+            n_impares.push(i);
+        }
+        document.getElementById("original").innerHTML = "Array original con los imapres desde el 1 al 21: " + n_impares + "</p>";
+
+        // recorre los indice del array se asigna a la variable sumatorio y se suma el resultado se la variable con el numerto siguiente obtenido.
+        n_impares.forEach(element => {
+            sumatorio += element;
+
+        });
+        document.getElementById("sumatorio").innerHTML = "Resultado se sumatorio: " + sumatorio + "</p>";
+        //muestra el array original del reves.
+        reves = n_impares.reverse();
+        document.getElementById("reves").innerHTML = " original del reves: " + reves;
+        // se vuelve ha realizar el reverse para ponerlo en el orden original.
+        n_impares.reverse();
+        function buscar(){
+            //se recoge el valor introducido y se asigna  a la variable entrada.
+             entrada = parseInt(document.getElementById("entrada").value);
+             //con la funcion findIndex() nos devuelve el indice en el caso que se encuentre el numero y si no devolvera -1
+             // se le pasa por paremtro una duncion flecha que examina si el valor de que le introduce se encuentra en el array.
+             resul_busqueda = n_impares.findIndex(numero => numero == entrada);
+
+             if(resul_busqueda !== -1){
+                //extrae el valor del indice buscado y elimina solo 1 elemento
+                n_impares.splice(resul_busqueda, 1);
+                //lo muestra en el p establecido para su mostrado.
+                document.getElementById("resultado").innerHTML = "Exito, se ha encontrado el numero en el indice: " + resul_busqueda + "<br>"+"estado del array con el elemento eliminado: " +n_impares + "<br>" + "Descendente: " + n_impares.reverse() + "</p>";
+             }else {
+                document.getElementById("resultado").innerHTML = "ERROR, el numero "+ entrada +" no se ha encontrado.";
+             }
+        }
+    </script>
+</body>
+
+</html>
