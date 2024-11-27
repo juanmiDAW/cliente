@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Ingresar palabra: 
+        <input type="text" id="entrada">
+    </label>
+    <button onclick="entrada();">Enviar</button>
+
+    <p id="mostrar"></p>
+    <script>
+        var palabras = [];
+
+        function entrada(){
+            palabras.push(document.getElementById("entrada").value);
+
+            invertidas = palabras.map(palabra =>{
+                return palabra.split("").reverse().join("");
+            })
+
+            var indice = palabras.length;
+
+            var a_z = palabras.sort();
+            
+
+            document.getElementById("mostrar").innerHTML =  invertidas +"<br>"+ palabras[0] + "<br>" + palabras[palabras.length - 1] + "<br>" + "Numero de indices: " + indice +"<br>"+ "ascendente: " + a_z + "<br>"+ "decendiente: " + a_z.reverse();
+
+        }
+    </script>
+</body>
+</html>
