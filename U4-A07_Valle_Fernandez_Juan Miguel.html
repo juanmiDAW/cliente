@@ -11,13 +11,13 @@
     <script>
         var num_aleatorios = [];
         var menores_8 = [];
-
+        //en este for no crea 10 numeros aleatorios entre el 0 y el 11
         for(i = 0; i <= 10; i++){
             num_aleatorios[i]=Math.floor(Math.random() * 11);
         }
-
+        //se filtran todos los numeros y se asignan los numeros que cumplala condicion
         menores_8 = num_aleatorios.filter(menores => menores < 8);
-
+        //se itera sobre el array y se obtienen los  numeros impares y se le cambia el numero por el una cadena de valor "impar"
         for(i = 0; i < menores_8.length; i++){
             if(menores_8[i] % 2 !== 0){
                 menores_8[i] = "impar";
