@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mostrar"></p>
+
+    <script>
+        var num_aleatorios = [];
+        var menores_8 = [];
+
+        for(i = 0; i <= 10; i++){
+            num_aleatorios[i]=Math.floor(Math.random() * 11);
+        }
+
+        menores_8 = num_aleatorios.filter(menores => menores < 8);
+
+        for(i = 0; i < menores_8.length; i++){
+            if(menores_8[i] % 2 !== 0){
+                menores_8[i] = "impar";
+            }
+        }
+
+
+        document.getElementById("mostrar").innerHTML = "Array original: " + num_aleatorios +
+         "<br>" + "Menores que 8 y impar cambiado por texto: " + menores_8;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="mostrar"></p>
+
+    <script>
+        var numeros = [];
+        var comprobados = [];
+        var triple = [];
+        var multiplicacion = [];
+
+        for (i = 0; i <= 5; i++) {
+            tipo = Math.floor(Math.random() * 2);
+
+            if(tipo === 0){
+            numeros[i] = (Math.random() * 11).toFixed(2);
+            }else if(tipo === 1){
+                numeros[i] = Math.floor(Math.random()*11);
+            }
+        }
+
+        for (i = 0; i < numeros.length; i++) {
+            if (numeros[i] >= 0 && Number.isInteger(numeros[i]) === true) {
+                comprobados.push(numeros[i]);
+            }
+        }
+
+        triple = numeros.map(numero => (numero * 3).toFixed(2));
+
+        multiplicacion = triple.reduce((total, numero )=> total * numero, 1);
+
+
+        document.getElementById("mostrar").innerHTML = "Original: " + numeros + "<br>"
+            + "Positivos y enteros: " + comprobados + "<br>" +
+            "El triple: " + triple + "<br>" + 
+            "Multiplicacion de todos: " + multiplicacion;
+
+    </script>
+</body>
+
+</html>
