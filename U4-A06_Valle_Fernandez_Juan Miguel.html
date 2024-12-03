@@ -12,96 +12,155 @@
         <input type="text" name="" id="nombre">
     </label>
     <br>
-    <label for="">Modulo 1: 
+    <hr>
+    <label for="">Modulo 1:
         <input type="text" name="" id="modulo1">
     </label>
     <br>
-    <label for="">Nota primer trimestre: 
-        <input type="number" name="" id="nota1-2" min="0" max="10">
+    <label for="">Nota primer trimestre:
+        <input type="number" name="" id="nota1_1" min="0" max="10">
     </label>
     <br>
-    <label for="">Nota segundo trimestre: 
-        <input type="number" name="" id="nota1-2" min="0" max="10">
+    <label for="">Nota segundo trimestre:
+        <input type="number" name="" id="nota1_2" min="0" max="10">
     </label>
     <br>
-    <label for="">Nota tercer trimestre: 
-        <input type="number" name="" id="nota1-3" min="0" max="10">
+    <label for="">Nota tercer trimestre:
+        <input type="number" name="" id="nota1_3" min="0" max="10">
     </label>
     <br>
-    <label for="">Modulo 2: 
+    <hr>
+    <label for="">Modulo 2:
         <input type="text" name="" id="modulo2">
     </label>
     <br>
-    <label for="">Nota primer trimestre: 
-        <input type="number" name="" id="nota2-1" min="0" max="10">
+    <label for="">Nota primer trimestre:
+        <input type="number" name="" id="nota2_1" min="0" max="10">
     </label>
     <br>
-    <label for="">Nota segundo trimestre: 
-        <input type="number" name="" id="nota2-2" min="0" max="10">
+    <label for="">Nota segundo trimestre:
+        <input type="number" name="" id="nota2_2" min="0" max="10">
     </label>
     <br>
-    <label for="">Nota tercer trimestre: 
-        <input type="number" name="" id="nota2-3" min="0" max="10">
+    <label for="">Nota tercer trimestre:
+        <input type="number" name="" id="nota2_3" min="0" max="10">
     </label>
     <br>
-    <label for="">Modulo 3: 
+    <hr>
+    <label for="">Modulo 3:
         <input type="text" name="" id="modulo3">
     </label>
     <br>
-    <label for="">Nota primer trimestre: 
-        <input type="number" name="" id="nota3-1" min="0" max="10">
+    <label for="">Nota primer trimestre:
+        <input type="number" name="" id="nota3_1" min="0" max="10">
     </label>
     <br>
-    <label for="">Nota segundo trimestre: 
-        <input type="number" name="" id="nota3-2" min="0" max="10">
+    <label for="">Nota segundo trimestre:
+        <input type="number" name="" id="nota3_2" min="0" max="10">
     </label>
     <br>
-    <label for="">Nota tercer trimestre: 
-        <input type="number" name="" id="nota3-3" min="0" max="10">
+    <label for="">Nota tercer trimestre:
+        <input type="number" name="" id="nota3_3" min="0" max="10">
     </label>
     <br>
     <button onclick="enviar();">Enviar</button>
-
+    <hr>
+    <!-- parrafo para mostrar la tabla -->
     <p id="mostrar"></p>
-    
+
     <script>
+        //se crea el array prinncipal como local-global del documento
         var alumno = [];
-        var nombre = "";
-        var modulo = "";
-        var nota1 = 0;
-        var nota2 = 0;
-        var nota3 = 0;
-
         
-
-        function enviar(){
-            nombre = document.getElementById("nombre").value.trim();
-            modulo = document.getElementById("modulo").value.trim();
-            nota1 = parseInt(document.getElementById("nota1").value);
-            nota2 = parseInt(document.getElementById("nota2").value);
-            nota3 = parseInt(document.getElementById("nota3").value);
+        //esta funcion se encarga de recoger los valores y los asigna a las variables
+        function enviar() {
+             nombre = document.getElementById("nombre").value.trim();
+            //obtencion de valores del modulo1 y notas
+             modulo1 = document.getElementById("modulo1").value.trim();
+             nota1_1 = parseInt(document.getElementById("nota1_1").value);
+             nota1_2 = parseInt(document.getElementById("nota1_2").value);
+             nota1_3 = parseInt(document.getElementById("nota1_3").value);
             
-            ejecutar(alumno, nombre, modulo, nota1, nota2, nota3);
+            //obtencion de valores del modulo2 y notas
+             modulo2 = document.getElementById("modulo2").value.trim();
+             nota2_1 = parseInt(document.getElementById("nota2_1").value);
+             nota2_2 = parseInt(document.getElementById("nota2_2").value);
+             nota2_3 = parseInt(document.getElementById("nota2_3").value);
+            
+            //obtencion de valores del modulo3 y notas
+             modulo3 = document.getElementById("modulo3").value.trim();
+             nota3_1 = parseInt(document.getElementById("nota3_1").value);
+             nota3_2 = parseInt(document.getElementById("nota3_2").value);
+             nota3_3 = parseInt(document.getElementById("nota3_3").value);
+
+            //se llama a la funcion ejecutar para concatenar las funciones
+            ejecutar();
 
         }
 
-        function ejecutar(alumno, nombre, modulo, nota1,nota2, nota3 ){
-            if (nombre === "" || modulo ===""){
-                document.getElementById("mostrar").innerHTML = "Error algun campo  esta vacio";
-            }else{
-                parametro = [nombre,[modulo,[nota1,nota2,nota3]]];
-                alumno.push(parametro);
+        function ejecutar() {
 
-                document.getElementById("mostrar").innerHTML = "EXITO, campos existentes: " + alumno;
-                console.log(alumno)
+            //se comprueba si los campos estan vacios
+            if (nombre === "" || modulo1 === "" || modulo2 === "" || modulo3 === "") {
+                document.getElementById("mostrar").innerHTML = "Error algun campo  esta vacio";
+                return;
+            
+            //en el caso de no estar vacios se completa los arrays con los valores
+            } else {
+                parametro = [nombre,
+                    [modulo1, [nota1_1, nota1_2, nota1_3]],
+                    [modulo2, [nota2_1, nota2_2, nota2_3]],
+                    [modulo3, [nota3_1, nota3_2, nota3_3]]
+                ];
+
+                //se añade los valores al final del array principal
+                alumno.push(parametro);
+                //si el numero de alumnos es mayor o igual a 5 se bloquean los campos
+                if (alumno.length >= 5) {
+                bloquearCampos();
+            }
+                
+                //se llama a la funcion mostrar para concatenar funciones desde la funcion anterior
+                mostrar();
+
             }
         }
 
-        function mostrar(alumno){
-            tabla = "<table><tr><th>Nombre</th><th>Modulo</th><th>Nota 1</th><th>Nota 2</th><th>Nota 3</th>";
-                array.forEach(element => {
-                    
+        function mostrar() {
+
+            //se le asigna a la varibale tabla la estructura de la cabecera de la tabla
+            var tabla = "<table border='1'><tr><th>Nombre</th><th>Módulo</th><th>Nota 1</th><th>Nota 2</th><th>Nota 3</th></tr>";
+            
+            //con este foreach recorremos los indices del array principal
+                alumno.forEach(alumno => {
+                var nombre = alumno[0];
+                //con este foeach recorremos el array que se encuentra dentro del array principal
+                alumno.slice(1).forEach(modulo => {
+                    var nombreModulo = modulo[0];
+                    var notas = modulo[1];
+                    //se añade las filas a la estructura de la tabla
+                    tabla += `
+                        <tr>
+                            <td>${nombre}</td>
+                            <td>${nombreModulo}</td>
+                            <td>${notas[0]}</td>
+                            <td>${notas[1]}</td>
+                            <td>${notas[2]}</td>
+                        </tr>`;
                 });
+            });
+            tabla += "</table>";
+
+            document.getElementById("mostrar").innerHTML = tabla;
+        }
+
+        function bloquearCampos() {
+            // se seleciona todos los botones y input
+            const inputs = document.querySelectorAll("input, button");
+            //se iteran sobre los input y botones y se pone el disable a true 
+            inputs.forEach(input => {
+                input.disabled = true;
+            });
         }
     </script>
 </body>
