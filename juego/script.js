@@ -94,10 +94,10 @@ function comprobar() {
         }
     }
     if (error === false) {
-        document.getElementById('mensaje').innerHTML = "ENHORABUENA, siguiente nivel...!"
+        document.getElementById('mensaje').innerHTML = "ENHORABUENA, siguiente nivel...!";
         subirNivel(n_secuencia);
     } else if (error === true) {
-        document.getElementById('mensaje').innerHTML = "OOOOooooooOOOooOH, has fallado!"
+        document.getElementById('mensaje').innerHTML = "OOOOooooooOOOooOH, has fallado! Te quedaste en el nivel: " + nivel;
         console.log(`secu: ${secuencia} jugador: ${secuencia_jugador}`);
 
     }

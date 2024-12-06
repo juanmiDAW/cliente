@@ -1,7 +1,10 @@
+
 .tablero{
     display: flex;
     margin: 20px;
     border-radius: 200px;
+    position: relative;
+    z-index: 1;
 }
 .rojo{
     background-color: red;
@@ -45,7 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:#ffd399 ;
+    background-image:radial-gradient(circle, #ff637d, #f4f1bb, #66d7d1, #eaf2e3, #fff87f );
 }
 .mensaje{
     border: 3px solid black;
@@ -55,6 +58,17 @@
     font-size: 50px;
     font-weight: bolder;
     background-color: white;
+}
+
+.titulo{
+    font-size: 60px;
+    font-family: sans-serif;
+    font-style: italic;
+    
+}
+.marco{
+    background-color: white;
+    border-radius: 100%;
 }
 
 
