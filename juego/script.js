@@ -9,6 +9,14 @@ var n_random = 0;
 var finSecuencia = false;
 var nivel = 1;
 
+var jugador = {
+    nivel : 1,
+
+    subirNivel: function(){
+        this.nivel++;
+    },
+};
+
 //funcion principal en la que se inicia el juego  y tambien se reinicia las variables.
 function empezar() {
     secuencia = [];
@@ -17,7 +25,7 @@ function empezar() {
     finSecuencia = false;
     nivel = 1;
     //se muestra en el contenedor con la clase mensaje el nivel en que se encuentra
-    document.getElementById('mensaje').innerHTML = `Nivel: ${nivel}`;
+    document.getElementById('mensaje').innerHTML = `Nivel: ${jugador.nivel}`;
     //llama a la funcion para generar la funcion de la maquina
     generarSecuencia(secuencia, n_secuencia);
     //muestra la secuancia generada
@@ -126,7 +134,7 @@ function comprobar() {
         //en el caso de un error
     } else if (error === true) {
         //mensaje de fallo y se indica hasta que nivel llego
-        document.getElementById('mensaje').innerHTML = "OOOOooooooOOOooOH, has fallado! Te quedaste en el nivel: " + nivel;
+        document.getElementById('mensaje').innerHTML = "OOOOooooooOOOooOH, has fallado! Te quedaste en el nivel: " + jugador.nivel;
         console.log(`secu: ${secuencia} jugador: ${secuencia_jugador}`);
 
     }
@@ -137,7 +145,7 @@ function subirNivel(n_secuencia) {
     //se incrementa en 1 la secuencia
     n_secuencia++;
     //se incrementa en 1 el nivel
-    nivel++;
+    jugador.subirNivel();
     //se reinicia las variables
     secuencia_jugador = [];
     finSecuencia = false;
@@ -145,7 +153,7 @@ function subirNivel(n_secuencia) {
     //tiempo de separacion entre nivel y nivel del 1000ms
     setTimeout(()=>{
     //se indica el nivel
-    document.getElementById('mensaje').innerHTML = `Nivel: ${nivel}`;
+    document.getElementById('mensaje').innerHTML = `Nivel: ${jugador.nivel}`;
     //llamda a la funcion de generar la secuncia de la maquina, se le pasa por parametro asi itera una sola vez y solo añade un color 
     generarSecuencia(secuencia,1);
     setTimeout(() => {
