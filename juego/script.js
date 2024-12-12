@@ -7,7 +7,6 @@ var secuencia_jugador = [];
 var n_secuencia = 4;
 var n_random = 0;
 var finSecuencia = false;
-var nivel = 1;
 
 var jugador = {
     nivel : 1,
@@ -23,7 +22,7 @@ function empezar() {
     secuencia_jugador = [];
     n_secuencia = 4;
     finSecuencia = false;
-    nivel = 1;
+    jugador.nivel = 1;
     //se muestra en el contenedor con la clase mensaje el nivel en que se encuentra
     document.getElementById('mensaje').innerHTML = `Nivel: ${jugador.nivel}`;
     //llama a la funcion para generar la funcion de la maquina
