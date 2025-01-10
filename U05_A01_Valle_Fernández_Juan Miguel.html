@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<!--Le damos el 100 del alto de la ventana para que ocupe todo-->
 
 <body id="elemento" style="height: 100vh;">
     <script>
-
+        //declaramos la funcion llamada boton, se le pasa por parametro la variable magica event
         function boton(event) {
+            //con la propiedad button devolvera un valor segun el boton pulsado
             switch (event.button) {
+                //en el caso del valor sea 0
                 case 0:
                     alert("boton izquierdo");
                     break;
-
+                //en el caso del valor sea 1
                 case 1:
                     alert("boton central");
                     break
+                //en el caso del valor sea 2
                 case 2:
                     alert("boton derecho");
                     break;
 
             }
         }
+        //cuando al elemento con el id elemento se presione un mobon del mouse se activara la funcion boton
         document.getElementById('elemento').onmousedown = boton;
     </script>
 </body>
