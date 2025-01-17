@@ -1,5 +1,5 @@
 document.getElementById('formulario').addEventListener('submit', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     //coje el nombre
     var nombre = document.getElementById('nombre').value;
     //coje el mensaje
@@ -46,6 +46,31 @@ document.getElementById('formulario').addEventListener('submit', function (event
             break;
     }
 
-    window.open(`resultado.html?nombre=${nombre}&mensaje=${mensaje}&color=${color}&asignatura=${lista}&seleccionado=${seleccionado}&preferente=${preferente}&profesor=${profesor}`);
+
+
+
+    window.open(`resultado.html?nombre=${nombre}&mensaje=${mensaje}&color=${color}&asignatura=${lista}&seleccionado=${seleccionado}&preferente=${utlimo}&profesor=${profesor}`);
 
 });
+
+//dia preferente com predeterminado
+var dias_orden = [];
+var utlimo = "";
+var dias = document.querySelectorAll('input[type="checkbox"]');
+
+dias.forEach(function (dias) {
+    dias.addEventListener('change', function () {
+        if (dias.checked) {
+            dias_orden.push(dias.value);
+            utlimo = dias_orden[dias_orden.length - 1];
+        } else if (!dias.checked) {
+            var indice = dias_orden.indexOf(dias.value);
+            dias_orden.splice(indice, 1);
+            utlimo = dias_orden[dias_orden.length - 1];
+
+        }
+    });
+});   
+
+var colores = document.querySelectorAll('input[type="radio"]');
+colores
