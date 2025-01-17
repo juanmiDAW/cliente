@@ -1,3 +1,10 @@
+//enlace
+var botonEnlace = document.getElementById('enlace');
+botonEnlace.addEventListener('click', function(){
+    window.location.href = "https://www.google.com";
+});
+
+
 document.getElementById('formulario').addEventListener('submit', function (event) {
     // event.preventDefault();
     //coje el nombre
@@ -70,7 +77,21 @@ dias.forEach(function (dias) {
 
         }
     });
-});   
+});
 
 var colores = document.querySelectorAll('input[type="radio"]');
-colores
+colores.forEach(function (colores) {
+    colores.addEventListener('click', function () {
+        switch (colores.value) {
+            case "rojo":
+                document.getElementsByTagName('form')[0].style.backgroundColor = "red";
+                break;
+            case "verde":
+                document.getElementsByTagName('form')[0].style.backgroundColor = "green";
+                break;
+            case "azul":
+                document.getElementsByTagName('form')[0].style.backgroundColor = "blue";
+                break;
+        }
+    })
+});

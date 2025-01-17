@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    
-    <body>
-        <form action="" id="formulario">
-            
-            <fieldset>
-                <legend>Datos personales
-                </legend>
-                <label for="">Introduce tu nombre:
-                    <input type="text" id="nombre">
-                </label>
-                <br>
-                <label for="">Mensaje:
-                    <textarea name="" id="mensaje"></textarea>
-                </label>
-            </fieldset>
-            <br>
-            <label for="">Elige un color:
-                <label for="">
-                    <input type="radio" name="color" id="" value="rojo">Rojo
-                </label>
-                <br>
-                <label for="">
-                    <input type="radio" name="color" id="" value="verde">verde
-                </label>
-                <br>
-                <label for="">
-                    <input type="radio" name="color" id="" value="Azul">Azul
-                </label>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="formulario">
+
+        <fieldset>
+            <legend>Datos personales
+            </legend>
+            <label for="">Introduce tu nombre:
+                <input type="text" id="nombre">
             </label>
             <br>
-            
-            <label for="">Seleciona una asignatura
-                <select name="" id="lista">
-                    <option value="lengua">Lengua</option>
-                    <option value="matematicas">matematicas</option>
-                    <option value="naturales">naturales</option>
-                    <option value="musica">musica</option>
-                </select>
+            <label for="">Mensaje:
+                <textarea name="" id="mensaje"></textarea>
             </label>
-            <br>
-            <label for="">Selecciona los dias con disponibilidad:
-            <label for="">
-                <input type="checkbox" name="dia" id="lunes" value="lunes">Lunes
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="dia" id="martes" value="martes">martes
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="dia" id="miercoles" value="miercoles">miercoles
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="dia" id="jueves" value="jueves">jueves
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="dia" id="viernes" value="viernes">viernes
-            </label>
+        </fieldset>
+        <br>
+        <label for="">Elige un color:</label>
+        <br>
+        <label for="">
+            <input type="radio" name="color" id="" value="rojo">Rojo
+        </label>
+        <br>
+        <label for="">
+            <input type="radio" name="color" id="" value="verde">verde
+        </label>
+        <br>
+        <label for="">
+            <input type="radio" name="color" id="" value="azul">Azul
+        </label>
+        <br>
+
+        <label for="">Seleciona una asignatura
+            <select name="" id="lista">
+                <option value="lengua">Lengua</option>
+                <option value="matematicas">matematicas</option>
+                <option value="naturales">naturales</option>
+                <option value="musica">musica</option>
+            </select>
+        </label>
+        <br>
+        <label for="">Selecciona los dias con disponibilidad:</label>
+        <br>
+        <label for="">
+            <input type="checkbox" name="dia" id="lunes" value="lunes">Lunes
+        </label>
+        <br>
+        <label for="">
+            <input type="checkbox" name="dia" id="martes" value="martes">martes
+        </label>
+        <br>
+        <label for="">
+            <input type="checkbox" name="dia" id="miercoles" value="miercoles">miercoles
+        </label>
+        <br>
+        <label for="">
+            <input type="checkbox" name="dia" id="jueves" value="jueves">jueves
+        </label>
+        <br>
+        <label for="">
+            <input type="checkbox" name="dia" id="viernes" value="viernes">viernes
         </label>
         <br>
         <label for="">Selecciona el dia preferente:
@@ -80,7 +80,9 @@
         <br>
         <button type="submit">Haz clic para enviar la informacion</button>
         <button type="reset">Comenzar a rellenar de nuevo</button>
-        <button><a href="https://www.google.com/">Haz click sobre mi</a></button>
+
+        //hay que poner el boton de tipo button, porque si no dentro de un formulario de manera predeterminada esta tipo submit. Por lo que activara el evento del formulario.
+        <button type="button" id="enlace">Haz click sobre mi</button>
     </form>
     <script src="script.js"></script>
 </body>
