@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <fieldset>
-        <legend>Datos personales</legend><br>
-        <label for="">Nombre: <p id="nombre"></p></label><br>
-        <label for="">Mensaje: <p id="mensaje"></p></label>
-    </fieldset>
-    <br>
-    <label for="">Color:
-        <p id="color"></p>
-    </label>
-    <br>
-    <label for="">Asignatura selecionada:
-        <p id="asignatura"></p>
-    </label>
-    <br>
-    <label for="">Disponibilidad día: 
-        <p id="dias"></p>
-    </label>
-    <br>
-    <label for="">Día preferente
-        <p id="preferente"></p>
-    </label>
+    <div class="personales">
+        <label for="">Nombre:</label>
+        <p id="nombre"></p>
+        <label for="">Mensaje:</label>
+        <p id="mensaje"></p>
+    </div>
+    <div>
+        <label for="">Color: </label>
+        <span id="color"></span>
+
+    </div>
+    <div>
+        <label for="">Asignatura selecionada:</label>
+        <span id="asignatura"></span>
+
+    </div>
+    <div>
+        <label for="">Disponibilidad día:</label>
+        <span id="dias"></span>
+
+    </div>
+    <div>
+        <label for="">Día preferente:</label>
+        <span id="preferente"></span>
+
+    </div>
+
+    <div>
+        <label for="">Profesor:</label>
+        <span id="profesor"></span>
+
+    </div>
+    <script>
+        var valores = window.location.search;
+        valores = new URLSearchParams(valores);
+
+        document.getElementById('nombre').innerHTML = valores.get('nombre');
+        document.getElementById('mensaje').innerHTML = valores.get('mensaje');
+
+        document.getElementById('color').innerHTML = valores.get('color');
+        document.getElementById('asignatura').innerHTML = valores.get('asignatura');
+
+        document.getElementById('dias').innerHTML = valores.get('seleccionado');
+
+        document.getElementById('preferente').innerHTML = valores.get('preferente');
+
+        document.getElementById('profesor').innerHTML = valores.get('profesor');
+
+
+
+    </script>
 </body>
+
 </html>

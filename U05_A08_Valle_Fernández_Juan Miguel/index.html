@@ -1,79 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form action="" id="formulario">
-
-        <fieldset>
-            <legend>Datos personales
-            </legend>
-            <label for="">Introduce tu nombre:
-                <input type="text" id="nombre">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <form action="" id="formulario">
+            
+            <fieldset>
+                <legend>Datos personales
+                </legend>
+                <label for="">Introduce tu nombre:
+                    <input type="text" id="nombre">
+                </label>
+                <br>
+                <label for="">Mensaje:
+                    <textarea name="" id="mensaje"></textarea>
+                </label>
+            </fieldset>
+            <br>
+            <label for="">Elige un color:
+                <label for="">
+                    <input type="radio" name="color" id="" value="rojo">Rojo
+                </label>
+                <br>
+                <label for="">
+                    <input type="radio" name="color" id="" value="verde">verde
+                </label>
+                <br>
+                <label for="">
+                    <input type="radio" name="color" id="" value="Azul">Azul
+                </label>
             </label>
             <br>
-            <label for="">Mensaje:
-                <textarea name="" id="mensaje"></textarea>
-            </label>
-        </fieldset>
-        <br>
-        <label for="">Elige un color:
-            <label for="">
-                <input type="radio" name="color" id="rojo" value="rojo">Rojo
-            </label>
-            <br>
-            <label for="">
-                <input type="radio" name="color" id="color" value="verde">verde
+            
+            <label for="">Seleciona una asignatura
+                <select name="" id="lista">
+                    <option value="lengua">Lengua</option>
+                    <option value="matematicas">matematicas</option>
+                    <option value="naturales">naturales</option>
+                    <option value="musica">musica</option>
+                </select>
             </label>
             <br>
+            <label for="">Selecciona los dias con disponibilidad:
             <label for="">
-                <input type="radio" name="color" id="color" value="Azul">Azul
-            </label>
-        </label>
-        be
-
-        <label for="">Seleciona una asignatura
-            <select name="" id="lista">
-                <option value="lengua">Lengua</option>
-                <option value="matematicas">matematicas</option>
-                <option value="naturales">naturales</option>
-                <option value="musica">musica</option>
-            </select>
-        </label>
-        <br>
-        <label for="">Selecciona los dias con disponibilidad:
-            <label for="">
-                <input type="checkbox" name="" id="" value="lunes">Lunes
-            </label>
-            <br>
-            <label for="">
-                <input type="checkbox" name="" id="" value="martes">martes
+                <input type="checkbox" name="" id="lunes" value="lunes">Lunes
             </label>
             <br>
             <label for="">
-                <input type="checkbox" name="" id="" value="miercoles">miercoles
+                <input type="checkbox" name="" id="martes" value="martes">martes
             </label>
             <br>
             <label for="">
-                <input type="checkbox" name="" id="" value="miercoles">miercoles
+                <input type="checkbox" name="" id="miercoles" value="miercoles">miercoles
             </label>
             <br>
             <label for="">
-                <input type="checkbox" name="" id="" value="jueves">jueves
+                <input type="checkbox" name="" id="jueves" value="jueves">jueves
             </label>
             <br>
             <label for="">
-                <input type="checkbox" name="" id="" value="viernes">viernes
+                <input type="checkbox" name="" id="viernes" value="viernes">viernes
             </label>
         </label>
         <br>
         <label for="">Selecciona el dia preferente:
-            <select name="" id="">
+            <select name="" id="preferente">
                 <option value="lunes">lunes</option>
                 <option value="martes">martes</option>
                 <option value="miercoles">miercoles</option>
@@ -86,6 +82,7 @@
         <button type="reset">Comenzar a rellenar de nuevo</button>
         <button><a href="https://www.google.com/">Haz click sobre mi</a></button>
     </form>
+    <script src="script.js"></script>
 </body>
 
 </html>

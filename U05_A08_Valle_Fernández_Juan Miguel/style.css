@@ -1,0 +1,36 @@
+label {
+    background-color: #969494;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+    background-color: #bbbbbb;
+    ;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+span {
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 8px;
+
+}
+
+.personales {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+.personales p {
+    background-color: #f1d7a7;
+    padding: 10px;
+    border-radius: 10px;
+}
