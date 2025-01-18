@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <form id="encuesta">¿Que sistema operativo os gusta más?
+            <br>
+            <input type="radio" name="os" id="ios" value="ios">
+            <label for="">iOS</label>
+            <br>
+            <input type="radio" name="os" id="android" value="android">
+            <label for="">Android</label>
+            <br>
+            <input type="radio" name="os" id="windowsPhone" value="windowsPhone">
+            <label for="">Windows Phone</label>
+            <br>
+            <input type="radio" name="os" id="otros" value="otros">
+            <label for="">Otros</label>
+            <br>
+            <button type="submit">Votar</button>
+        </form>
+        <div id="resultado">
+            <progress id="r_ios" value="0" max="100"></progress>
+            <label for="">iOS</label>
+            <br>
+            <progress id="r_android" value="0" max="100"></progress>
+            <label for="">Android</label>
+            <br>
+            <progress id="r_windowsPhone" value="0" max="100"></progress>
+            <label for="">Windows Phone</label>
+            <br>
+            <progress id="r_otros" value="0" max="100"></progress>
+            <label for="">Otros</label>
+            <br>
+        </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
