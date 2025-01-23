@@ -6,56 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="script.js"></script>
+    <style>*{margin-top: 5px;}</style>
 </head>
 
 <body>
-    <div>
+    <form action="" id="formulario">
 
-        <label for="">Nombre:
-            <input type="text" name="" id="nombre">
-        </label>
-    </div>
-    <div>
-
-        <label for="">Contraseña:
-            <input type="password" name="" id="password">
-        </label>
-    </div>
-    <div>
-
-        <label for="">Fecha de nacimiento:
-            <input type="date" name="" id="fecha">
-        </label>
-    </div>
-    <div>
-
-        <label for="">Opciones de intereses:
-            <label for="">
-                <input type="checkbox" name="" id="nombre" value="venta">Venta
+        <div>
+            
+            <label for="">Nombre:
+                <input type="text" name="" id="nombre">
+                <span style="color: red;" id="errNombre"></span>
             </label>
-            <label for="">
-                <input type="checkbox" name="" id="nombre" value="posventa">Posventa
+        </div>
+        <div>
+            
+            <label for="">Contraseña:
+                <input type="password" name="" id="contraseña">
+                <span style="color: red;" id="errContraseña"></span>
             </label>
-            <label for="">
-                <input type="checkbox" name="" id="nombre" value="recambios">Recambios
-            </label>
-            <label for="">
-                <input type="checkbox" name="" id="nombre" value="mantenimiento">Mantenimiento
-            </label>
-        </label>
-    </div>
-    <div>
+        </div>
+        <div>
+            
+            <label for="">Fecha de nacimiento:
+                <input type="date" name="" id="nacimiento">
+                <span style="color: red;" id="errNacimiento"></span>
 
-        <label for="">Genero:
-            <label for="">
-                <input type="radio" name="genero" id="" value="masculino">Masculino
             </label>
-            <label for="">
-                <input type="radio" name="genero" id="" value="femenino">Femenino
+        </div>
+        <div>
+            
+            <label for="">Opciones de intereses:
+                <label for="">
+                    <input type="checkbox" name="interes" id="" value="venta">Venta
+                </label>
+                <label for="">
+                    <input type="checkbox" name="interes" id="" value="posventa">Posventa
+                </label>
+                <label for="">
+                    <input type="checkbox" name="interes" id="" value="recambios">Recambios
+                </label>
+                <label for="">
+                    <input type="checkbox" name="interes" id="" value="mantenimiento">Mantenimiento
+                </label>
             </label>
-        </label>
-    </div>
+            <span style="color: red;" id="errInteres"></span>
 
-</body>
+        </div>
+        <div>
+            
+            <label for="">Genero:
+                <label for="">
+                    <input type="radio" name="genero" id="" value="masculino">Masculino
+                </label>
+                <label for="">
+                    <input type="radio" name="genero" id="" value="femenino">Femenino
+                </label>
+            </label>
+            <span style="color: orangered;" id="errGenero"></span>
 
+        </div>
+        <button id="boton" type="submit">Enviar</button>
+    </form>
+        
+    </body>
+    
 </html>

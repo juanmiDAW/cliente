@@ -28,19 +28,22 @@ selector.addEventListener('input', function(){
     };
 
     color = document.getElementById('color').value;
+    var selecNotificaiones = "";
 
     selectorNotificaciones.forEach(element => {
-        if(!element.checked){
-            document.getElementById('errNotificaciones').innerHTML = 'Falta seleccionar una de las dos opciones.';
-        }else if(element.checked){
-            notificaciones = element.value;
-            document.getElementById('errNotificaciones').innerHTML = '';
-        };
+        if(element.checked){
+            selecNotificaiones = element.value;
+        }
     });
-
+    if(selecNotificaiones === ""){
+        document.getElementById('errNotificaciones').innerHTML = 'Falta seleccionar una de las dos opciones.';
+    }else{
+        document.getElementById('errNotificaciones').innerHTML = '';
+    };
+    
     document.getElementById('reNombre').innerHTML = nombre;
     document.getElementById('reColor').innerHTML = color;
-    document.getElementById('reNotificaciones').innerHTML = notificaciones;
+    document.getElementById('reNotificaciones').innerHTML = selecNotificaiones;
 });
 
 document.getElementById('boton').addEventListener('mouseover',function(){
