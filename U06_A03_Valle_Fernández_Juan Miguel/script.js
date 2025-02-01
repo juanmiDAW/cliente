@@ -40,6 +40,8 @@ crearTabla.addEventListener('click', function(){
     th4.textContent = 'Año de fabricacion';
     fila.appendChild(th4);
 
+
+
     head.appendChild(fila);
     tabla.appendChild(head);
 
@@ -66,6 +68,6 @@ crearTabla.addEventListener('click', function(){
 
     });
 
-    // tabla.appendChild(fila);
+    document.body.appendChild(tabla);
     
 });
