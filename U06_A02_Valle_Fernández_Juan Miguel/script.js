@@ -15,8 +15,11 @@ anyadir.addEventListener('click', function(){
     document.body.appendChild(contenedor);
 });
 
+//se le añade un evento click 
 eliminar.addEventListener('click', function(){
+    //coge ell primer elemento div del documento
     var div = document.querySelector('div');
 
+    //eliminacion del elemento div
     div.remove();
 });
