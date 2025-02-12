@@ -55,7 +55,7 @@ function crearTabla() {
     var tabla = document.createElement('table');
 //se asignan los atributos de la tabla
     tabla.id = 'tabla';
-    tabla.border = "1";
+    tabla.style.border = "1";
     tabla.style.borderCollapse = 'collapse';
 //se crea la cabecera de la tabla
     var cabecera = tabla.createTHead();
