@@ -11,22 +11,91 @@
     <form action="" id="encuesta">
         <fieldset>
             <legend>¿Qué equipo crees que va a ganar la liga este año?</legend>
-            <input type="radio" name="equipo" id="equipo" value="Real Madrid">
-            <input type="radio" name="equipo" id="equipo" value="Barcelona">
-            <input type="radio" name="equipo" id="equipo" value="Atlético de Madrid">
-            <input type="radio" name="equipo" id="equipo" value="Sevilla">
+            <div>
+
+                <input type="radio" name="equipo" id="" value="RealMadrid">
+                <label for="">Real Madrid</label>
+            </div>
+            <div>
+
+                <input type="radio" name="equipo" id="" value="Barcelona">
+                <label for="">Barcelona</label>
+            </div>
+            <div>
+
+                <input type="radio" name="equipo" id="" value="AtleticodeMadrid">
+                <label for="">Atlético de Madrid</label>
+            </div>
+            <div>
+
+                <input type="radio" name="equipo" id="" value="Sevilla">
+                <label for="">Sevilla</label>
+            </div>
+
             <button type="submit">Enviar</button>
         </fieldset>
     </form>
 
+    <div>
+        <progress value="" max="100" id="progressMadrid"></progress>
+        <label for="">Real Madrid</label>
+    </div>
+    <div>
+        <progress value="" max="100" id="progressBarcelona"></progress>
+        <label for="">Barcelona</label>
+    </div>
+    <div>
+        <progress value="" max="100" id="progressAtletico"></progress>
+        <label for="">Atlético de Madrid</label>
+    </div>
+    <div>
+        <progress value="" max="100" id="progressSevilla"></progress>
+        <label for="">Sevilla</label>
+    </div>
+</body>
     <script>
+        //obtenemos el elemento con el id de encuesta
         var selector = document.getElementById('encuesta');
-        selector.addEventListener('submit', function(e) {
-           array.forEach(element => {
+        //creacion de la variable voto
+        var voto = '';
+        //se le añade un evento al formulario
+        selector.addEventListener('submit',async function (event) {
+            event.preventDefault();
+            //se obtienen todos los input con nombre equipo
+            var selectorRadio = document.querySelectorAll('input[name="equipo"]');
+            // se recorre todos los input...
+            selectorRadio.forEach(element => {
+                // si tiene la propiedad checked...
+                if (element.checked) {
+                    // se le asigna a la variable voto
+                    voto = element.value;
+                };
+            });
             
-           });
+            //si voto esta vacio...
+            if (voto ===''){
+                //salta un alert
+                alert('No se ha seleccionado ninguna opcion.');
+                
+            };
+
+            //creacion de la URL
+            const url = `encuesta_voto.php?voto=${voto}`;
+            //creacion del objeto Request y le pasamos la url
+            const request = new Request(url);
+            //hacemos la peticion
+            const response = await fetch(request);
+            //obtenemos la respuesta y la pasamos a texto
+            const votoText = await response.text();
+            //lo convertimos de JSON a objeto
+            const votoResultado = JSON.parse(votoText);
+
+            //aqui se le asigna los values a cada barra de progreso
+            document.getElementById('progressMadrid').value = votoResultado.porcentajes.RealMadrid || 0;
+                document.getElementById('progressBarcelona').value = votoResultado.porcentajes.Barcelona || 0;
+                document.getElementById('progressAtletico').value = votoResultado.porcentajes.AtleticoDeMadrid || 0;
+                document.getElementById('progressSevilla').value = votoResultado.porcentajes.Sevilla || 0;
         });
     </script>
-</body>
 
 </html>
