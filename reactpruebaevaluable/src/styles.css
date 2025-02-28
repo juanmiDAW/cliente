@@ -1,0 +1,233 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffddc6;
+  }
+  
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  /* Estilos del encabezado */
+  header {
+    background-color: #d60257;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: linear 0.2s;
+  }
+  
+  header nav a:hover {
+    text-decoration: none;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Estilos de los botones */
+  button, a {
+    padding: 10px 20px;
+    background-color: #f7a21b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  button:hover, a:hover {
+    background-color: #005f73;
+  }
+  
+  /* Estilos del carrito */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    background-color: #c5c9ee;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul li button {
+    background-color: #e74c3c;
+    border-radius: 5px;
+    transition: linear 0.2s;
+  }
+  
+  ul li button:hover {
+    background-color: #3676ff;
+  }
+  
+  h3 {
+    color: #333;
+  }
+  
+  h4 {
+    color: #888;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  /* Estilos para el Carrito y los Productos */
+  .cart-items, .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .cart-items .item, .product-list .item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .cart-items .item h3, .product-list .item h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .cart-items .item p, .product-list .item p {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .cart-items .item button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+  }
+  
+  .cart-items .item button:hover {
+    background-color: #388e3c;
+  }
+  
+  .product-list .item button {
+    margin-top: 10px;
+    background-color: #008CBA;
+  }
+  
+  .product-list .item button:hover {
+    background-color: #005f73;
+  }
+  
+  /* Estilo de la sección de pago */
+  .payment-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .payment-section button {
+    background-color: #ff9900;
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .payment-section button:hover {
+    background-color: #e68900;
+  }
+  
+  /* Estilos de enlaces externos */
+  a {
+    color: #008CBA;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  li img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+  
