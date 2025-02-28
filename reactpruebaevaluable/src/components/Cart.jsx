@@ -24,24 +24,26 @@ const Cart = ({ cartItems, removeItem }) => {
   };
 
   return (
-    <div>
+    <div className='div-carrito'>
       <h2>Carrito de Compras</h2>
       {cartItems.length === 0 ? (
         <p>No hay productos en el carrito.</p>
       ) : (
         <>
-          <ul>
+          <div className='linea-carrito'>
             {cartItems.map((item) => (
-              <li key={item.id}>
-                <img src={item.image} alt={item.title} style={{ width: 50, height: 50 }} />
-                <h3>{item.title}</h3>
-                <p>${item.price} x {item.count}</p>
-                <button onClick={() => handleRemoveItem(item.id)}>Eliminar una unidad</button>
-              </li>
+              <div className='item-carrito' key={item.id}>
+                <img src={item.image} alt={item.title} />
+                <div className='articulo'>
+                  <h3>{item.title}</h3>
+                </div>
+                <p>{item.price}€ x {item.count}</p>
+                <button onClick={() => handleRemoveItem(item.id)}>Eliminar </button>
+              </div>
             ))}
-          </ul>
+          </div>
           <div>
-            <h3>Total: ${calculateTotal()}</h3>
+            <h3>Total: {calculateTotal()}€</h3>
           </div>
         </>
       )}

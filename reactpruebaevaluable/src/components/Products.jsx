@@ -27,9 +27,9 @@ const Products = ({ addToCart }) => {
       <ul>
         {products.map((product) => (
           <li key={product.id}>
-            <img src={product.image} alt={product.title} style={{ width: 50, height: 50 }} />
+            <img src={product.image} alt={product.title} />
             <h3>{product.title}</h3>
-            <p>${product.price}</p>
+            <p>{product.price}€</p>
             <Button text="Agregar al carrito" onClick={() => addToCart(product)} />
           </li>
         ))}

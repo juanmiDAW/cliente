@@ -27,10 +27,13 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className='inicio'>
       <h2>Página de Inicio</h2>
-      <Products addToCart={addToCart} />
-      <Cart cartItems={cartItems} removeItem={removeItem} />
+      <div className='div-web'>
+
+        <Products addToCart={addToCart} />
+        <Cart  cartItems={cartItems} removeItem={removeItem} />
+      </div>
     </div>
   );
 };
