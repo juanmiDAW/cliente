@@ -1,9 +1,10 @@
 // src/components/Footer.jsx
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => (
   <footer>
-    <p>Tienda Online</p>
+    <p>© 2025 Amaclon - Todos los derechos reservados</p>
   </footer>
 );
 

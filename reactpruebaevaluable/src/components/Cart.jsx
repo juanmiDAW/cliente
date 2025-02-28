@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cart.css';
 
 const Cart = ({ cartItems: articulosCarrito, removeItem: eliminarArticulo }) => {
   // Función para calcular el total del carrito

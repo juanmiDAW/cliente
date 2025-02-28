@@ -5,14 +5,14 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import OtherPage from './pages/OtherPage';
-import './App.css';
+// import './App.css';
 
 const App = () => (
   <Router>
     <Header />
     <Routes>
       <Route path="/" element={<HomePage />} />  {/* Usamos "element" para pasar el componente */}
-      <Route path="/otherPage" element={<OtherPage />} />
+      <Route path="/otraPagina" element={<OtherPage />} />
     </Routes>
     <Footer />
   </Router>

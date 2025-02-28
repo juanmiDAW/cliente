@@ -1,6 +1,7 @@
 // src/components/Products.jsx
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
+import './Products.css';
 
 const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);

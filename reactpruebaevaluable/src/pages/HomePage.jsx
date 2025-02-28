@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Products from '../components/Products';
 import Cart from '../components/Cart';
 
+
 const HomePage = () => {
   const [articulosCarrito, setArticulosCarrito] = useState([]);
 
