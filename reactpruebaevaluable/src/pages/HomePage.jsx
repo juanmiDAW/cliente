@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Products from '../components/Products';
 import Cart from '../components/Cart';
 
-
 const HomePage = () => {
   const [articulosCarrito, setArticulosCarrito] = useState([]);
 
@@ -36,7 +35,9 @@ const HomePage = () => {
     <div className='inicio'>
       <h2>Página de Inicio</h2>
       <div className='div-web'>
+        {/* Componente de productos, se le pasa la función agregarAlCarrito como prop */}
         <Products addToCart={agregarAlCarrito} />
+        {/* Componente del carrito, se le pasan los artículos del carrito y la función eliminarArticulo como props */}
         <Cart cartItems={articulosCarrito} removeItem={eliminarArticulo} />
       </div>
     </div>
